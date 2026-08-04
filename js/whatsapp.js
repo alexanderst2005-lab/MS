@@ -71,38 +71,7 @@ ${resumenProductosTexto}----------------------------------
 ${notas ? `📝 *Observaciones:* ${notas}\n` : ''}----------------------------------
 ¡Hola MS Boutique! Deseo confirmar la disponibilidad de mi pedido y recibir las instrucciones de pago. 💎`;
 
-    // Renderizar modal de previsualización antes de abrir WhatsApp
-    const modalResumenBody = document.getElementById('modal-confirmacion-productos');
-    const modalDatosEnvio = document.getElementById('modal-confirmacion-datos');
-    const modalTotalText = document.getElementById('modal-confirmacion-total');
-    const btnConfirmarEnviar = document.getElementById('btn-confirmar-whatsapp-final');
-
-    if (modalResumenBody) modalResumenBody.innerHTML = htmlPrevisualizacionProductos;
-    if (modalTotalText) modalTotalText.innerText = `${formatearMoneda(totalPedido)} (${totalCantidadArticulos} items)`;
-    if (modalDatosEnvio) {
-        modalDatosEnvio.innerHTML = `
-            <strong>${nombre}</strong><br>
-            📞 ${telefono} | 🏙️ ${ciudad}<br>
-            🏠 ${direccion}<br>
-            ${notas ? `<em class="text-muted">Notas: ${notas}</em>` : ''}
-        `;
-    }
-
-    if (btnConfirmarEnviar) {
-        btnConfirmarEnviar.onclick = () => {
-            const urlWhatsApp = `https://api.whatsapp.com/send?phone=${TELEFONO_WHATSAPP_BOUTIQUE}&text=${encodeURIComponent(mensajeWhatsApp)}`;
-            window.open(urlWhatsApp, '_blank');
-        };
-    }
-
-    // Mostrar modal Bootstrap
-    const modalElement = document.getElementById('modalConfirmacionPedido');
-    if (modalElement && typeof bootstrap !== 'undefined') {
-        const modalInstance = new bootstrap.Modal(modalElement);
-        modalInstance.show();
-    } else {
-        // Fallback directo si no hay modal
-        const urlWhatsApp = `https://api.whatsapp.com/send?phone=${TELEFONO_WHATSAPP_BOUTIQUE}&text=${encodeURIComponent(mensajeWhatsApp)}`;
-        window.open(urlWhatsApp, '_blank');
-    }
+    // Abrir WhatsApp directamente con la orden completa
+    const urlWhatsApp = `https://api.whatsapp.com/send?phone=${TELEFONO_WHATSAPP_BOUTIQUE}&text=${encodeURIComponent(mensajeWhatsApp)}`;
+    window.open(urlWhatsApp, '_blank');
 };

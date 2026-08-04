@@ -39,10 +39,16 @@ const actualizarContadoresUI = () => {
     
     const badges = document.querySelectorAll('.cart-counter');
     badges.forEach(badge => {
-        badge.innerText = totalItems;
-        badge.classList.remove('pop-in');
-        void badge.offsetWidth;
-        badge.classList.add('pop-in');
+        if (totalItems > 0) {
+            badge.innerText = totalItems;
+            badge.style.display = 'flex';
+            badge.classList.remove('pop-in');
+            void badge.offsetWidth;
+            badge.classList.add('pop-in');
+        } else {
+            badge.innerText = '0';
+            badge.style.display = 'none';
+        }
     });
 };
 
@@ -92,9 +98,12 @@ const cambiarCantidadItem = (productoId, talla, cambio) => {
 // Eliminar ítem individualmente de forma inmediata
 const eliminarDelCarrito = (productoId, talla) => {
     let carrito = obtenerCarrito();
+    const itemEliminado = carrito.find(item => item.id === productoId && item.talla === (talla || ''));
+    const nombreItem = itemEliminado ? itemEliminado.nombre : 'Producto';
+
     carrito = carrito.filter(item => !(item.id === productoId && item.talla === (talla || '')));
     guardarCarrito(carrito);
-    mostrarToastNotificacion('Producto eliminado de tu bolsa');
+    mostrarToastNotificacion(nombreItem, '', 'Eliminado de tu bolsa', true);
 };
 
 // Vaciar carrito completamente
@@ -116,7 +125,14 @@ const renderizarOffcanvasCarrito = () => {
 
     const carrito = obtenerCarrito();
     const totalCantidadItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
-    if (counterHeader) counterHeader.innerText = totalCantidadItems;
+    if (counterHeader) {
+        if (totalCantidadItems > 0) {
+            counterHeader.innerText = totalCantidadItems;
+            counterHeader.style.display = 'flex';
+        } else {
+            counterHeader.style.display = 'none';
+        }
+    }
 
     if (carrito.length === 0) {
         contenedorItems.innerHTML = `
@@ -186,7 +202,7 @@ const renderizarOffcanvasCarrito = () => {
 };
 
 // Toast Notificación Compacto & Elegante
-const mostrarToastNotificacion = (nombreProducto, talla = '') => {
+const mostrarToastNotificacion = (nombreProducto, talla = '', subtexto = '¡Agregado a tu bolsa!', esEliminacion = false) => {
     let toast = document.getElementById('toast-notification');
     if (!toast) {
         toast = document.createElement('div');
@@ -195,15 +211,18 @@ const mostrarToastNotificacion = (nombreProducto, talla = '') => {
         document.body.appendChild(toast);
     }
 
-    const badgeTalla = talla ? `<span class="badge bg-gold text-dark ms-1" style="font-size: 0.62rem; padding: 2px 5px;">${talla}</span>` : '';
+    const icono = esEliminacion ? 'bi bi-trash-fill' : 'bi bi-bag-check-fill';
+    const badgeTalla = (talla && !esEliminacion) ? `<span class="badge bg-gold text-dark ms-1" style="font-size: 0.62rem; padding: 2px 5px;">${talla}</span>` : '';
+    const estiloIcono = esEliminacion ? 'background: rgba(220, 53, 69, 0.2); color: #FF6B6B;' : '';
+    const estiloSub = esEliminacion ? 'color: #FF8585;' : '';
 
     toast.innerHTML = `
-        <div class="toast-icon-box">
-            <i class="bi bi-bag-check-fill"></i>
+        <div class="toast-icon-box" style="${estiloIcono}">
+            <i class="${icono}"></i>
         </div>
         <div class="toast-content-text">
             <div class="toast-title">${nombreProducto} ${badgeTalla}</div>
-            <div class="toast-sub">¡Agregado a tu bolsa!</div>
+            <div class="toast-sub" style="${estiloSub}">${subtexto}</div>
         </div>
     `;
 
