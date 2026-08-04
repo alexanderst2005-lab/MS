@@ -1,0 +1,574 @@
+/* ==========================================================================
+   MS BOUTIQUE - SISTEMA DE DISEÑO HIGH FASHION LUXURY
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Paleta MS Luxury */
+    --color-bg: #FAF8F5;
+    --color-surface: #FFFFFF;
+    --color-dark-bg: #0C0C0C;
+    --color-dark-card: #161616;
+    
+    --color-gold: #C5A880;
+    --color-gold-dark: #A48458;
+    --color-gold-light: #F4ECE1;
+    --color-gold-accent: #D4AF37;
+    
+    --color-gray-light: #F0EDE8;
+    --color-text-dark: #121212;
+    --color-text-muted: #6E6E6E;
+    --color-text-light: #F0F0F0;
+    
+    /* Tipografía Premium */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', 'Montserrat', sans-serif;
+    
+    /* Sombras y Radios */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-pill: 50px;
+    
+    --shadow-soft: 0 8px 25px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 16px 35px rgba(197, 168, 128, 0.2);
+    --shadow-nav: 0 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* --- BASE --- */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-dark);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-text-dark);
+    letter-spacing: 0.5px;
+}
+
+a {
+    color: var(--color-gold-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-gold-accent);
+}
+
+/* --- ENCABEZADO Y NAVBAR OSCURO ELEGANTE --- */
+.navbar {
+    background: var(--color-dark-bg) !important;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-nav);
+    padding: 1.1rem 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(197, 168, 128, 0.25);
+}
+
+/* LOGO MS PROTAGONISTA */
+.navbar-brand-ms {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    line-height: 1;
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--color-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.navbar-brand-ms:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--color-gold-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ENLACES DEL MENÚ */
+.nav-link-ms {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #E0E0E0 !important;
+    padding: 0.5rem 1.2rem !important;
+    border-radius: var(--radius-pill);
+    transition: all 0.3s ease;
+}
+
+.nav-link-ms:hover, .nav-link-ms.active {
+    color: var(--color-gold) !important;
+    background: rgba(197, 168, 128, 0.12);
+}
+
+/* Buscador Navbar */
+.search-input-navbar {
+    border: 1px solid rgba(197, 168, 128, 0.3);
+    border-radius: var(--radius-pill);
+    padding: 0.45rem 1.2rem;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+.search-input-navbar::placeholder {
+    color: #A0A0A0;
+}
+
+.search-input-navbar:focus {
+    outline: none;
+    border-color: var(--color-gold);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 4px rgba(197, 168, 128, 0.15);
+    color: #FFFFFF;
+}
+
+/* Icono Carrito */
+.cart-icon-container {
+    position: relative;
+    font-size: 1.3rem;
+    color: var(--color-gold);
+    cursor: pointer;
+    padding: 9px 15px;
+    border-radius: var(--radius-pill);
+    background: rgba(197, 168, 128, 0.12);
+    border: 1px solid rgba(197, 168, 128, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cart-icon-container:hover {
+    transform: translateY(-2px);
+    background: rgba(197, 168, 128, 0.25);
+    color: #FFFFFF;
+}
+
+.cart-counter {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--color-gold-dark);
+    color: #FFFFFF;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 21px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #FFFFFF;
+}
+
+/* --- HERO BANNER MODERN Y LIMPIO --- */
+.hero-section {
+    position: relative;
+    padding: 6rem 0 5rem;
+    background: linear-gradient(135deg, #FAF7F2 0%, #F2E9DE 100%);
+    overflow: hidden;
+}
+
+.hero-title {
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 1.12;
+    color: #121212;
+    margin-bottom: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.hero-title span {
+    font-style: italic;
+    color: var(--color-gold-dark);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2.2rem;
+    max-width: 520px;
+    font-weight: 300;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(197, 168, 128, 0.3);
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    transition: transform 0.8s ease;
+}
+
+/* BOTÓN COMPRAR AHORA COMPACTO */
+.btn-boutique-primary {
+    background: #121212;
+    color: #FFFFFF !important;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0.85rem 2.2rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-gold);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.35s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-boutique-primary:hover {
+    background: var(--color-gold-dark);
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(197, 168, 128, 0.4);
+}
+
+.btn-boutique-outline {
+    background-color: transparent;
+    color: #121212 !important;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid #121212;
+    transition: all 0.3s ease;
+}
+
+.btn-boutique-outline:hover {
+    background-color: #121212;
+    color: var(--color-gold) !important;
+    transform: translateY(-2px);
+}
+
+/* --- BARRA DE BENEFICIOS --- */
+.benefits-section {
+    background: var(--color-surface);
+    padding: 2.2rem 1.2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(197, 168, 128, 0.2);
+    margin-top: -2.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0.4rem;
+}
+
+.benefit-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: var(--color-gold-light);
+    color: var(--color-gold-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    border: 1px solid rgba(197, 168, 128, 0.3);
+    flex-shrink: 0;
+}
+
+.benefit-title {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.benefit-desc {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* --- TARJETAS DE CATEGORÍAS --- */
+.category-card {
+    position: relative;
+    height: 300px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(197, 168, 128, 0.2);
+    transition: all 0.4s ease;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.category-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(12, 12, 12, 0.85) 0%, rgba(12, 12, 12, 0.05) 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.8rem;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.08);
+}
+
+.category-card:hover .category-card-overlay {
+    background: linear-gradient(to top, rgba(197, 168, 128, 0.9) 0%, rgba(12, 12, 12, 0.15) 80%);
+}
+
+/* ==========================================================================
+   TARJETAS DE PRODUCTO COMPACTAS
+   ========================================================================== */
+.product-card-premium {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(197, 168, 128, 0.2);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card-premium:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-gold);
+}
+
+.product-img-box {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background-color: var(--color-gray-light);
+}
+
+.product-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card-premium:hover .product-img-box img {
+    transform: scale(1.05);
+}
+
+.badge-boutique {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 10px;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 600;
+    border-radius: var(--radius-pill);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.badge-nuevo {
+    background-color: #121212;
+    color: var(--color-gold);
+    border: 1px solid var(--color-gold);
+}
+
+.badge-mas-vendido {
+    background-color: var(--color-gold-dark);
+    color: #FFFFFF;
+}
+
+.product-body-content {
+    padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-category-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-gold-dark);
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+}
+
+.product-title-text {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 6px;
+    line-height: 1.25;
+}
+
+.product-price-tag {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #121212;
+    margin-bottom: 10px;
+}
+
+.size-select-box {
+    border: 1px solid rgba(197, 168, 128, 0.35);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    padding: 5px 8px;
+    background-color: var(--color-bg);
+    font-family: var(--font-body);
+}
+
+.size-select-box:focus {
+    border-color: var(--color-gold-dark);
+    outline: none;
+}
+
+/* ==========================================================================
+   CARRITO OFFCANVAS Y CONTENEDOR ESTRICTO DE IMÁGENES
+   ========================================================================== */
+.offcanvas-cart {
+    width: 440px !important;
+    border-top-left-radius: var(--radius-lg);
+    border-bottom-left-radius: var(--radius-lg);
+}
+
+.cart-item-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(197, 168, 128, 0.25);
+    overflow: hidden;
+}
+
+.cart-item-img-box {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    min-height: 70px;
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background-color: var(--color-gray-light);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item-img {
+    width: 70px !important;
+    height: 70px !important;
+    max-width: 70px !important;
+    max-height: 70px !important;
+    object-fit: cover !important;
+}
+
+/* --- WHATSAPP FLOATING BUTTON --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #FFF !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 14px 35px rgba(37, 211, 102, 0.6);
+}
+
+/* --- FOOTER BOUTIQUE MS OSCURO ELEGANTE --- */
+footer {
+    background-color: #0C0C0C;
+    color: #CCCCCC;
+    padding: 4.5rem 0 2rem;
+    margin-top: 5rem;
+    border-top: 1px solid rgba(197, 168, 128, 0.3);
+}
+
+footer h5 {
+    color: var(--color-gold);
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    margin-bottom: 1.3rem;
+    letter-spacing: 1px;
+}
+
+footer a {
+    color: #A0A0A0;
+}
+
+footer a:hover {
+    color: var(--color-gold);
+}
+
+.footer-social-icons a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(197, 168, 128, 0.1);
+    border: 1px solid rgba(197, 168, 128, 0.3);
+    color: var(--color-gold);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    background: var(--color-gold-dark);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolsa de Compras | MS Boutique</title>
+    <meta name="description" content="Revisa tu bolsa de compras y finaliza tu pedido exclusivo de bodys, pijamas y accesorios en MS Boutique.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Custom Design CSS -->
+    <link href="css/estilos.css" rel="stylesheet">
+    <link href="css/animaciones.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR FIJO MS BOUTIQUE -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand me-4" href="index.html">
+                <span class="navbar-brand-ms">MS</span>
+            </a>
+            
+            <div class="d-flex align-items-center gap-3 order-lg-3">
+                <div class="cart-icon-container">
+                    <i class="bi bi-bag"></i>
+                    <span class="cart-counter">0</span>
+                </div>
+                <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link-ms" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link-ms" href="catalogo.html?categoria=bodys">Bodys</a></li>
+                    <li class="nav-item"><a class="nav-link-ms" href="catalogo.html?categoria=pijamas">Pijamas</a></li>
+                    <li class="nav-item"><a class="nav-link-ms" href="catalogo.html?categoria=accesorios">Accesorios</a></li>
+                    <li class="nav-item"><a class="nav-link-ms" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER DEL CARRITO -->
+    <section class="py-4 mb-4 border-bottom" style="background: linear-gradient(135deg, #FAF7F2 0%, #F5EFE6 100%);">
+        <div class="container fade-in-up">
+            <h2 class="font-heading fw-bold mb-1 fs-1">Bolsa de Compras</h2>
+            <p class="text-muted font-heading fs-5 mb-0">Revisa el desglose detallado de tus piezas y finaliza tu pedido directamente por WhatsApp.</p>
+        </div>
+    </section>
+
+    <!-- CONTENIDO DEL CARRITO -->
+    <section class="container mb-5">
+        <div class="row g-4">
+            <!-- LISTA DE PRODUCTOS EN EL CARRITO -->
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm rounded-4 p-4 mb-4" style="border: 1px solid rgba(197, 168, 128, 0.2) !important;">
+                    <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-3">
+                        <h5 class="font-heading fw-bold mb-0 fs-3">Detalle del Pedido</h5>
+                        <button class="btn btn-sm btn-outline-danger rounded-pill px-3" onclick="vaciarCarrito()">
+                            <i class="bi bi-trash me-1"></i> Vaciar Bolsa
+                        </button>
+                    </div>
+
+                    <div id="pagina-carrito-items-container">
+                        <!-- Renderizado detallado desde script -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMULARIO CHECKOUT & RESUMEN DEL PEDIDO -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm rounded-4 p-4 sticky-lg-top" style="top: 100px; border: 1px solid rgba(197, 168, 128, 0.2) !important;">
+                    <h5 class="font-heading fw-bold mb-3 fs-3"><i class="bi bi-receipt me-2 text-warning"></i> Resumen del Pedido</h5>
+                    
+                    <div class="bg-light p-3 rounded-3 mb-4 border">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted small">Cantidad total de productos:</span>
+                            <span class="fw-bold font-body" id="resumen-total-items">0 artículos</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted small">Subtotal de artículos:</span>
+                            <span class="fw-bold font-body" id="pagina-carrito-subtotal">$0</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="text-muted small">Envío VIP:</span>
+                            <span class="text-success small fw-bold">Por acordar en WhatsApp</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center border-top pt-2 mt-2">
+                            <span class="font-heading fw-bold fs-4">Total del Pedido:</span>
+                            <span class="font-body fw-bold fs-3 text-dark" id="pagina-carrito-total">$0</span>
+                        </div>
+                    </div>
+
+                    <h5 class="font-heading fw-bold mb-3 fs-4"><i class="bi bi-truck me-2 text-warning"></i> Datos de Entrega</h5>
+                    <form id="form-checkout-whatsapp" onsubmit="procesarPedidoWhatsApp(event)">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-muted text-uppercase">Nombre Completo *</label>
+                            <input type="text" class="form-control form-control-sm rounded-3" id="cliente-nombre" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-muted text-uppercase">Teléfono / WhatsApp *</label>
+                            <input type="tel" class="form-control form-control-sm rounded-3" id="cliente-telefono" placeholder="Número de contacto" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-muted text-uppercase">Dirección de Entrega *</label>
+                            <input type="text" class="form-control form-control-sm rounded-3" id="cliente-direccion" placeholder="Dirección residencia o empleo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-muted text-uppercase">Ciudad / Municipio *</label>
+                            <input type="text" class="form-control form-control-sm rounded-3" id="cliente-ciudad" placeholder="Ciudad" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-muted text-uppercase">Notas Adicionales</label>
+                            <textarea class="form-control form-control-sm rounded-3" id="cliente-notas" rows="2" placeholder="Detalles de entrega opcionales..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-boutique-primary w-100 py-3 text-center rounded-pill mt-2">
+                            <i class="bi bi-whatsapp fs-5 me-2"></i>
+                            <span>Revisar y Enviar a WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE CONFIRMACIÓN Y REVISIÓN ANTES DE WHATSAPP -->
+    <div class="modal fade" id="modalConfirmacionPedido" tabindex="-1" aria-labelledby="modalConfirmacionLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow-lg">
+                <div class="modal-header bg-dark text-white border-bottom">
+                    <h5 class="modal-header-title font-heading fw-bold mb-0 text-white" id="modalConfirmacionLabel">
+                        <i class="bi bi-check-circle-fill text-warning me-2"></i> Revisa tu Pedido
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-muted small mb-3">Revisa todos los datos de tu orden antes de abrir WhatsApp:</p>
+
+                    <h6 class="font-heading fw-bold border-bottom pb-2 mb-2">Productos Seleccionados:</h6>
+                    <div id="modal-confirmacion-productos" class="mb-3">
+                        <!-- Generado por JS -->
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center bg-light p-3 rounded-3 mb-3">
+                        <span class="font-heading fw-bold">Total Final:</span>
+                        <span class="fs-5 fw-bold text-dark font-body" id="modal-confirmacion-total">$0</span>
+                    </div>
+
+                    <h6 class="font-heading fw-bold border-bottom pb-2 mb-2">Datos de Envío:</h6>
+                    <div id="modal-confirmacion-datos" class="small text-dark">
+                        <!-- Generado por JS -->
+                    </div>
+                </div>
+                <div class="modal-footer bg-light border-top">
+                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3" data-bs-dismiss="modal">Modificar Pedido</button>
+                    <button type="button" class="btn btn-success rounded-pill px-4 py-2 font-body fw-semibold" id="btn-confirmar-whatsapp-final">
+                        <i class="bi bi-whatsapp me-1"></i> Abrir en WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER BOUTIQUE MS -->
+    <footer>
+        <div class="container text-center small text-white-50">
+            &copy; 2026 MS Boutique. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/whatsapp.js"></script>
+
+    <script>
+        const renderizarPaginaCarrito = () => {
+            const contenedor = document.getElementById('pagina-carrito-items-container');
+            const subtotalEl = document.getElementById('pagina-carrito-subtotal');
+            const totalEl = document.getElementById('pagina-carrito-total');
+            const resumenItemsEl = document.getElementById('resumen-total-items');
+            if (!contenedor) return;
+
+            const carrito = obtenerCarrito();
+            const totalCantidadItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+
+            if (resumenItemsEl) {
+                resumenItemsEl.innerText = `${totalCantidadItems} ${totalCantidadItems === 1 ? 'artículo' : 'artículos'}`;
+            }
+
+            if (carrito.length === 0) {
+                contenedor.innerHTML = `
+                    <div class="text-center py-5">
+                        <i class="bi bi-bag-x display-1 text-muted"></i>
+                        <h4 class="font-heading fw-bold mt-3 fs-2">Tu bolsa está completamente vacía</h4>
+                        <p class="text-muted font-luxury fs-5">Descubre nuestras colecciones exclusivas de bodys, pijamas y accesorios.</p>
+                        <a href="catalogo.html" class="btn btn-boutique-primary mt-2">Explorar Catálogo MS</a>
+                    </div>
+                `;
+                if (subtotalEl) subtotalEl.innerText = formatearMoneda(0);
+                if (totalEl) totalEl.innerText = formatearMoneda(0);
+                return;
+            }
+
+            let html = '';
+            let totalGeneral = 0;
+
+            carrito.forEach(item => {
+                const subtotal = item.precio * item.cantidad;
+                totalGeneral += subtotal;
+
+                const htmlBadgeTalla = item.talla ? `<span class="badge bg-dark text-warning me-2">Talla: ${item.talla}</span>` : '<span class="badge bg-secondary me-2">Sin Talla</span>';
+                const imgItem = item.imagen || PLACEHOLDER_SVG;
+
+                html += `
+                    <div class="row align-items-center border-bottom py-3 g-3">
+                        <!-- Imagen Placeholder -->
+                        <div class="col-3 col-md-2">
+                            <img src="${imgItem}" 
+                                 alt="${item.nombre}" 
+                                 onerror="this.onerror=null; this.src='${PLACEHOLDER_SVG}';" 
+                                 class="img-fluid rounded-3 object-fit-cover shadow-sm" 
+                                 style="height: 85px; width: 100%;">
+                        </div>
+                        
+                        <!-- Información del producto (Nombre, Categoría, Talla, Precio unitario) -->
+                        <div class="col-9 col-md-4">
+                            <div class="text-uppercase text-warning fw-bold small" style="font-size: 0.7rem; letter-spacing: 1px;">${item.categoria}</div>
+                            <h6 class="font-heading fw-bold mb-1 fs-5">${item.nombre}</h6>
+                            <div class="d-flex align-items-center gap-1 mb-1">
+                                ${htmlBadgeTalla}
+                                <span class="text-muted small">P. Unitario: <strong>${formatearMoneda(item.precio)}</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- Selector de cantidad (+ / -) -->
+                        <div class="col-6 col-md-3">
+                            <label class="form-label text-muted small mb-1 d-block">Cantidad:</label>
+                            <div class="btn-group btn-group-sm border rounded-pill bg-white">
+                                <button class="btn btn-light px-3" onclick="cambiarCantidadItem(${item.id}, '${item.talla}', -1)">-</button>
+                                <span class="px-3 align-self-center font-monospace fw-bold">${item.cantidad}</span>
+                                <button class="btn btn-light px-3" onclick="cambiarCantidadItem(${item.id}, '${item.talla}', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Subtotal del producto -->
+                        <div class="col-4 col-md-2 text-end">
+                            <label class="form-label text-muted small mb-1 d-block">Subtotal:</label>
+                            <span class="fw-bold font-body text-dark fs-5">${formatearMoneda(subtotal)}</span>
+                        </div>
+
+                        <!-- Botón de eliminación individual -->
+                        <div class="col-2 col-md-1 text-end">
+                            <button class="btn btn-sm btn-link text-danger p-0 fs-4 border-0" onclick="eliminarDelCarrito(${item.id}, '${item.talla}')" title="Eliminar este producto">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            contenedor.innerHTML = html;
+            if (subtotalEl) subtotalEl.innerText = formatearMoneda(totalGeneral);
+            if (totalEl) totalEl.innerText = formatearMoneda(totalGeneral);
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderizarPaginaCarrito();
+        });
+    </script>
+</body>
+</html>
