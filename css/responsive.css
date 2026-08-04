@@ -51,4 +51,9 @@
         bottom: 20px;
         right: 20px;
     }
+
+    .announcement-bar {
+        font-size: 0.75rem;
+        padding: 6px 0;
+    }
 }

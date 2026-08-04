@@ -28,6 +28,24 @@
 
 <body>
 
+    <!-- CINTA DE ANUNCIOS EN MOVIMIENTO (MARQUEE) -->
+    <div class="announcement-bar">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="marquee-item"><i class="bi bi-truck"></i> ENVÍOS A TODO EL PAÍS <span class="marquee-divider">|</span> COMPRAS 100% SEGURAS</span>
+                <span class="marquee-item"><i class="bi bi-truck"></i> ENVÍOS A TODO EL PAÍS <span class="marquee-divider">|</span> COMPRAS 100% SEGURAS</span>
+                <span class="marquee-item"><i class="bi bi-truck"></i> ENVÍOS A TODO EL PAÍS <span class="marquee-divider">|</span> COMPRAS 100% SEGURAS</span>
+                <span class="marquee-item"><i class="bi bi-truck"></i> ENVÍOS A TODO EL PAÍS <span class="marquee-divider">|</span> COMPRAS 100% SEGURAS</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span class="marquee-item"><i class="bi bi-truck"></i> ENVÍOS A TODO EL PAÍS <span class="marquee-divider">|</span> COMPRAS 100% SEGURAS</span>
+                <span class="marquee-item"><i class="bi bi-truck"></i> ENVÍOS A TODO EL PAÍS <span class="marquee-divider">|</span> COMPRAS 100% SEGURAS</span>
+                <span class="marquee-item"><i class="bi bi-truck"></i> ENVÍOS A TODO EL PAÍS <span class="marquee-divider">|</span> COMPRAS 100% SEGURAS</span>
+                <span class="marquee-item"><i class="bi bi-truck"></i> ENVÍOS A TODO EL PAÍS <span class="marquee-divider">|</span> COMPRAS 100% SEGURAS</span>
+            </div>
+        </div>
+    </div>
+
     <!-- NAVBAR FIJO MS BOUTIQUE -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
@@ -36,11 +54,10 @@
             </a>
 
             <div class="d-flex align-items-center gap-3 order-lg-3">
-                <div class="cart-icon-container" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
-                    aria-controls="offcanvasCart">
+                <a href="carrito.html" class="cart-icon-container" title="Ver Bolsa de Compras">
                     <i class="bi bi-bag"></i>
                     <span class="cart-counter">0</span>
-                </div>
+                </a>
 
                 <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav">
@@ -61,9 +78,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link-ms" href="catalogo.html?categoria=accesorios">Accesorios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link-ms" href="contacto.html">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -133,34 +147,8 @@
         </div>
     </section>
 
-    <!-- OFFCANVAS CARRITO -->
-    <div class="offcanvas offcanvas-end offcanvas-cart" tabindex="-1" id="offcanvasCart"
-        aria-labelledby="offcanvasCartLabel">
-        <div class="offcanvas-header border-bottom">
-            <h5 class="offcanvas-title font-heading fw-bold" id="offcanvasCartLabel">
-                <i class="bi bi-bag me-2 text-warning"></i> Bolsa de Compras MS
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body" id="offcanvas-cart-items">
-            <!-- Items renderizados dinámicamente -->
-        </div>
-        <div class="offcanvas-footer p-3 border-top bg-light">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="fw-bold font-heading">Total estimado:</span>
-                <span class="fs-4 fw-bold text-dark font-body" id="offcanvas-cart-total">$0</span>
-            </div>
-            <div class="d-grid gap-2">
-                <a href="carrito.html" class="btn btn-boutique-primary py-3 text-center">
-                    <span>Finalizar Pedido</span>
-                    <i class="bi bi-whatsapp ms-1"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
     <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://api.whatsapp.com/send?phone=573000000000&text=Hola%20MS%20Boutique,%20tengo%20una%20consulta%20sobre%20los%20productos."
+    <a href="https://api.whatsapp.com/send?phone=573164291771&text=Hola%20MS%20Boutique,%20tengo%20una%20consulta%20sobre%20los%20productos."
         target="_blank" class="whatsapp-float pulse-subtle" title="Contacto por WhatsApp">
         <i class="bi bi-whatsapp"></i>
     </a>
@@ -195,7 +183,7 @@
                 <div class="col-lg-3 mb-3">
                     <h5>Contacto Directo</h5>
                     <ul class="list-unstyled small text-white-50">
-                        <li class="mb-2"><i class="bi bi-whatsapp text-success me-2"></i> +57 300 000 0000</li>
+                        <li class="mb-2"><i class="bi bi-whatsapp text-success me-2"></i> +57 316 429 1771</li>
                         <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@msboutique.com</li>
                     </ul>
                 </div>

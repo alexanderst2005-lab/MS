@@ -4,7 +4,7 @@
  * permitiendo al cliente revisar exactamente su compra y datos de entrega.
  */
 
-const TELEFONO_WHATSAPP_BOUTIQUE = "573000000000";
+const TELEFONO_WHATSAPP_BOUTIQUE = "573164291771";
 
 const procesarPedidoWhatsApp = (event) => {
     if (event) event.preventDefault();
