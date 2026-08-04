@@ -1,12 +1,12 @@
 /* ==========================================================================
-   MICRO-ANIMACIONES Y EFECTOS VISUALES
+   MICRO-ANIMACIONES Y EFECTOS VISUALES HIGH FASHION
    ========================================================================== */
 
-/* Keyframe Fade In Up */
+/* Keyframe Fade In Up Smooth */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -15,7 +15,7 @@
 }
 
 .fade-in-up {
-    animation: fadeInUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation: fadeInUp 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 .delay-1 { animation-delay: 0.15s; }
@@ -25,47 +25,205 @@
 /* Animación Pop-in para contador de carrito */
 @keyframes popIn {
     0% { transform: scale(0.6); }
-    50% { transform: scale(1.3); }
+    50% { transform: scale(1.35); }
     100% { transform: scale(1); }
 }
 
 .pop-in {
-    animation: popIn 0.35s ease-out;
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Vibración sutil para WhatsApp */
-@keyframes pulseSubtle {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.06); }
-    100% { transform: scale(1); }
+/* Vibración y Flotación sutil */
+@keyframes floatSlow {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
 }
 
-.pulse-subtle {
-    animation: pulseSubtle 3s infinite;
+.float-slow {
+    animation: floatSlow 5s ease-in-out infinite;
 }
 
-/* Toast Notificación flotante */
+/* Brillo metálico dorado para textos principales */
+@keyframes goldShimmerText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.shimmer-gold-text {
+    background: linear-gradient(135deg, #FFFFFF 0%, #E8C89B 25%, #C5A880 50%, #E8C89B 75%, #FFFFFF 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: goldShimmerText 4s linear infinite;
+}
+
+/* Anillo de pulso para el botón flotante de WhatsApp */
+@keyframes pulseRing {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.whatsapp-float-btn {
+    animation: pulseRing 2.2s infinite;
+}
+
+/* Efecto Shimmer al pasar por botones principales */
+.btn-boutique-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-boutique-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -150%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: rotate(25deg);
+    transition: all 0.75s ease;
+}
+
+.btn-boutique-primary:hover::after {
+    left: 150%;
+}
+
+/* Zoom progresivo suave para imágenes en tarjetas */
+.product-img-box img {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.6s ease !important;
+}
+
+.product-card-premium:hover .product-img-box img {
+    transform: scale(1.08) !important;
+    filter: brightness(1.03);
+}
+
+/* Elevación 3D para tarjetas de productos */
+.product-card-premium {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease !important;
+}
+
+.product-card-premium:hover {
+    transform: translateY(-8px) scale(1.015) !important;
+    box-shadow: 0 16px 35px rgba(197, 168, 128, 0.3) !important;
+    border-color: var(--color-gold) !important;
+}
+
+/* Iconos de Beneficios con rebote suave al hover */
+.benefit-item {
+    transition: transform 0.35s ease, background-color 0.35s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-4px);
+}
+
+.benefit-icon {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease;
+}
+
+.benefit-item:hover .benefit-icon {
+    transform: scale(1.15) rotate(5deg);
+    background-color: var(--color-gold-dark) !important;
+    color: #FFFFFF !important;
+}
+
+/* TOAST NOTIFICACIÓN COMPACTO & LLAMATIVO */
+@keyframes toastSpring {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 50px) scale(0.8);
+    }
+    65% {
+        opacity: 1;
+        transform: translate(-50%, -6px) scale(1.03);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+@keyframes toastGlowPulse {
+    0% { box-shadow: 0 10px 30px rgba(197, 168, 128, 0.25); }
+    50% { box-shadow: 0 14px 40px rgba(197, 168, 128, 0.55); }
+    100% { box-shadow: 0 10px 30px rgba(197, 168, 128, 0.25); }
+}
+
 .toast-notification {
     position: fixed;
-    bottom: 30px;
+    bottom: 35px;
     left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    background: rgba(44, 40, 42, 0.95);
+    transform: translate(-50%, 100px);
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     color: #FFFFFF;
-    padding: 12px 24px;
+    padding: 8px 18px 8px 10px;
     border-radius: 50px;
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    z-index: 9999;
+    font-family: var(--font-body);
+    border: 1px solid var(--color-gold);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+    z-index: 99999;
     opacity: 0;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     align-items: center;
     gap: 10px;
+    max-width: 380px;
 }
 
 .toast-notification.show {
-    transform: translateX(-50%) translateY(0);
     opacity: 1;
+    pointer-events: auto;
+    animation: toastSpring 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, toastGlowPulse 2.5s infinite;
+}
+
+.toast-icon-box {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
+    color: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(197, 168, 128, 0.4);
+}
+
+.toast-content-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    overflow: hidden;
+}
+
+.toast-title {
+    font-weight: 600;
+    color: #FFFFFF;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8rem;
+}
+
+.toast-sub {
+    font-size: 0.68rem;
+    color: var(--color-gold);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }

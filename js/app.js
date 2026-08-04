@@ -8,45 +8,41 @@ if (typeof window.PLACEHOLDER_SVG === 'undefined') {
 }
 
 const crearTarjetaProductoHTML = (producto) => {
-    let badgeHTML = '';
-    if (producto.nuevo) {
-        badgeHTML = `<span class="badge-boutique badge-nuevo">Novedad</span>`;
-    } else if (producto.masVendido) {
-        badgeHTML = `<span class="badge-boutique badge-mas-vendido">Exclusive</span>`;
-    }
-
     const tieneTallas = producto.tallas && producto.tallas.length > 0;
-    
-    let controlesHTML = '';
+
+    let controlesTallaHTML = '';
     if (tieneTallas) {
         const opcionesTallasHTML = producto.tallas.map(talla => `<option value="${talla}">${talla}</option>`).join('');
-        controlesHTML = `
-            <div class="row g-2 mb-2">
-                <div class="col-7">
-                    <select class="form-select size-select-box" id="talla-select-${producto.id}">
-                        ${opcionesTallasHTML}
-                    </select>
-                </div>
-                <div class="col-5">
-                    <input type="number" class="form-control size-select-box text-center" id="cantidad-input-${producto.id}" value="1" min="1" max="10">
-                </div>
-            </div>
+        controlesTallaHTML = `
+            <select class="form-select size-select-box py-1 px-2" id="talla-select-${producto.id}">
+                ${opcionesTallasHTML}
+            </select>
         `;
     } else {
-        controlesHTML = `
-            <div class="mb-2">
-                <input type="number" class="form-control size-select-box text-center" id="cantidad-input-${producto.id}" value="1" min="1" max="10" placeholder="Cant.">
-            </div>
+        controlesTallaHTML = `
+            <select class="form-select size-select-box text-muted py-1 px-2" id="talla-select-${producto.id}" disabled style="opacity: 0.7;">
+                <option value="">Única</option>
+            </select>
         `;
     }
+
+    const controlesHTML = `
+        <div class="row g-1 mb-2 product-controls-row">
+            <div class="col-7">
+                ${controlesTallaHTML}
+            </div>
+            <div class="col-5">
+                <input type="number" class="form-control size-select-box text-center py-1 px-1" id="cantidad-input-${producto.id}" value="1" min="1" max="10">
+            </div>
+        </div>
+    `;
 
     const rutaImagen = (producto.imagenes && producto.imagenes[0]) ? producto.imagenes[0] : window.PLACEHOLDER_SVG;
 
     return `
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 fade-in-up">
+        <div class="col-6 col-md-4 col-xl-3 mb-3 fade-in-up">
             <div class="product-card-premium">
                 <div class="product-img-box">
-                    ${badgeHTML}
                     <img src="${rutaImagen}" 
                          alt="${producto.nombre}" 
                          onerror="this.onerror=null; this.src=window.PLACEHOLDER_SVG;" 
@@ -54,13 +50,13 @@ const crearTarjetaProductoHTML = (producto) => {
                 </div>
                 <div class="product-body-content">
                     <div class="product-category-tag">${producto.categoria}</div>
-                    <h5 class="product-title-text text-truncate">${producto.nombre}</h5>
+                    <h5 class="product-title-text" title="${producto.nombre}">${producto.nombre}</h5>
                     <div class="product-price-tag">${formatearMoneda(producto.precio)}</div>
                     
                     <div class="mt-auto">
                         ${controlesHTML}
                         
-                        <button class="btn btn-boutique-primary w-100 py-2 btn-sm" onclick="eventoAgregarAlCarrito(${producto.id})">
+                        <button class="btn btn-boutique-primary w-100 py-1.5 btn-sm text-uppercase fw-bold btn-agregar-card" onclick="eventoAgregarAlCarrito(${producto.id})">
                             <i class="bi bi-bag-plus me-1"></i> Agregar
                         </button>
                     </div>

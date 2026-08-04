@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280" width="500" height="280">
+    <style>
+        .gold-line { stroke: #C5A880; stroke-width: 1.8; fill: none; }
+        .text-m { font-family: 'Playfair Display', 'Didot', serif; font-size: 110px; font-weight: 700; fill: #FFFFFF; }
+        .text-s { font-family: 'Playfair Display', 'Didot', serif; font-size: 110px; font-weight: 400; fill: #C49A85; }
+        .text-by { font-family: 'Montserrat', 'Poppins', sans-serif; font-size: 11px; font-weight: 600; fill: #C5A880; letter-spacing: 4px; }
+        .text-marcela { font-family: 'Playfair Display', 'Cinzel', serif; font-size: 19px; font-weight: 600; fill: #FFFFFF; letter-spacing: 8px; }
+        .leaf { fill: #C49A85; opacity: 0.9; }
+    </style>
+
+    <!-- Circular gold arc -->
+    <path d="M 130 170 A 95 95 0 1 1 370 110" class="gold-line" stroke-width="1.8" />
+    <path d="M 140 180 A 102 102 0 1 1 360 120" class="gold-line" stroke-width="0.8" opacity="0.6" />
+
+    <!-- Leaf branch on left -->
+    <g transform="translate(110, 110) rotate(-25) scale(0.65)">
+        <path d="M 30 100 Q 15 50 0 0" stroke="#C49A85" stroke-width="2" fill="none"/>
+        <path d="M 0 0 Q -20 -10 -25 10 Q -10 20 0 0" class="leaf"/>
+        <path d="M 10 30 Q -15 20 -20 40 Q -5 50 10 30" class="leaf"/>
+        <path d="M 20 60 Q -5 50 -10 70 Q 5 80 20 60" class="leaf"/>
+        <path d="M 5 15 Q 25 5 30 25 Q 15 35 5 15" class="leaf"/>
+        <path d="M 15 45 Q 35 35 40 55 Q 25 65 15 45" class="leaf"/>
+    </g>
+
+    <!-- Small Heart top right -->
+    <path d="M 368 65 C 368 60, 363 55, 358 60 C 353 55, 348 60, 348 65 C 348 73, 358 80, 358 80 C 358 80, 368 73, 368 65 Z" fill="none" stroke="#C49A85" stroke-width="1.5"/>
+
+    <!-- Monogram M and S -->
+    <text x="180" y="140" class="text-m">M</text>
+    <text x="245" y="172" class="text-s">S</text>
+
+    <!-- BY divider line -->
+    <line x1="165" y1="198" x2="215" y2="198" class="gold-line" />
+    <circle cx="165" cy="198" r="2.5" fill="#C5A880"/>
+    <text x="233" y="202" class="text-by">BY</text>
+    <line x1="275" y1="198" x2="325" y2="198" class="gold-line" />
+    <circle cx="325" cy="198" r="2.5" fill="#C5A880"/>
+
+    <!-- MARCELA SEGURA -->
+    <text x="250" y="230" text-anchor="middle" class="text-marcela">MARCELA SEGURA</text>
+
+    <!-- Bottom heart accent line -->
+    <line x1="175" y1="246" x2="230" y2="246" class="gold-line" stroke-width="1" />
+    <circle cx="175" cy="246" r="2" fill="#C5A880"/>
+    <path d="M 253 244 C 253 241, 250 238, 247 241 C 244 238, 241 241, 241 244 C 241 249, 247 253, 247 253 C 247 253, 253 249, 253 244 Z" fill="#C49A85"/>
+    <line x1="253" y1="246" x2="308" y2="246" class="gold-line" stroke-width="1" />
+    <circle cx="308" cy="246" r="2" fill="#C5A880"/>
+</svg>

@@ -57,15 +57,15 @@
     <!-- NAVBAR FIJO MS BOUTIQUE -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand me-4" href="index.html">
-                <span class="navbar-brand-ms">MS</span>
+            <a class="navbar-brand me-4 d-inline-flex align-items-center" href="index.html">
+                <img src="img/logo.svg" alt="MS by Marcela Segura" class="brand-logo-img">
             </a>
 
             <div class="d-flex align-items-center gap-3 order-lg-3">
-                <a href="carrito.html" class="cart-icon-container" title="Ver Bolsa de Compras">
+                <div class="cart-icon-container" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" title="Ver Tu Carrito">
                     <i class="bi bi-bag"></i>
                     <span class="cart-counter">0</span>
-                </a>
+                </div>
                 <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
@@ -93,12 +93,12 @@
         </div>
     </section>
 
-    <!-- FORMULARIO & FAQ -->
+    <!-- SECCIÓN ATENCIÓN Y FAQ -->
     <section class="container my-5">
-        <div class="row g-5">
+        <div class="row g-4 justify-content-center">
             <!-- CANALES DE CONTACTO DIRECTO -->
-            <div class="col-lg-5 fade-in-up">
-                <div class="card border-0 shadow-sm rounded-4 p-4 mb-4"
+            <div class="col-lg-6 fade-in-up">
+                <div class="card border-0 shadow-sm rounded-4 p-4 h-100"
                     style="border: 1px solid rgba(197, 168, 128, 0.2) !important;">
                     <h4 class="font-heading fw-bold mb-4 fs-3">Atención Directa</h4>
 
@@ -133,9 +133,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- PREGUNTAS FRECUENTES -->
-                <div class="card border-0 shadow-sm rounded-4 p-4"
+            <!-- PREGUNTAS FRECUENTES -->
+            <div class="col-lg-6 fade-in-up delay-1">
+                <div class="card border-0 shadow-sm rounded-4 p-4 h-100"
                     style="border: 1px solid rgba(197, 168, 128, 0.2) !important;">
                     <h5 class="font-heading fw-bold mb-3 fs-4">Preguntas Frecuentes</h5>
                     <div class="accordion accordion-flush" id="faqAccordion">
@@ -170,53 +172,41 @@
                     </div>
                 </div>
             </div>
-
-            <!-- FORMULARIO DE CONSULTAS -->
-            <div class="col-lg-7 fade-in-up delay-1">
-                <div class="card border-0 shadow-sm rounded-4 p-4"
-                    style="border: 1px solid rgba(197, 168, 128, 0.2) !important;">
-                    <h4 class="font-heading fw-bold mb-3 fs-3">Envíanos tu Consulta</h4>
-                    <form onsubmit="alert('¡Gracias por tu mensaje! Te contactaremos a la brevedad.'); return false;">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label class="form-label small fw-bold text-muted text-uppercase">Nombre Completo
-                                    *</label>
-                                <input type="text" class="form-control rounded-3" required placeholder="Nombre">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label small fw-bold text-muted text-uppercase">Correo Electrónico
-                                    *</label>
-                                <input type="email" class="form-control rounded-3" required
-                                    placeholder="ejemplo@correo.com">
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label small fw-bold text-muted text-uppercase">Asunto</label>
-                                <input type="text" class="form-control rounded-3"
-                                    placeholder="Asunto de la consulta...">
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label small fw-bold text-muted text-uppercase">Mensaje *</label>
-                                <textarea class="form-control rounded-3" rows="4" required
-                                    placeholder="Escribe aquí tu consulta..."></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-boutique-primary rounded-pill px-4">Enviar
-                                    Consulta</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
     </section>
+
+    <!-- OFFCANVAS CARRITO COMPONENT -->
+    <div class="offcanvas offcanvas-end offcanvas-cart" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+        <div class="offcanvas-header">
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-bag-fill text-gold fs-5"></i>
+                <h5 class="offcanvas-title font-heading fw-bold mb-0 text-uppercase letter-spacing-1 text-white fs-6" id="offcanvasCartLabel">TU CARRITO</h5>
+                <span class="badge rounded-circle bg-gold text-dark cart-counter" id="offcanvas-header-counter">0</span>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3" id="offcanvas-cart-items">
+            <!-- Renderizado dinámico desde carrito.js -->
+        </div>
+        <div class="offcanvas-footer p-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="cart-subtotal-label">SUBTOTAL</span>
+                <span class="cart-subtotal-amount" id="offcanvas-cart-total">$0</span>
+            </div>
+            <a href="carrito.html" class="btn btn-boutique-primary w-100 py-3 text-center fw-bold text-uppercase d-flex align-items-center justify-content-center gap-2">
+                <span>FINALIZAR PEDIDO</span>
+                <i class="bi bi-bag"></i>
+            </a>
+        </div>
+    </div>
 
     <!-- FOOTER BOUTIQUE MS -->
     <footer>
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4 mb-3">
-                    <a class="navbar-brand me-4" href="index.html">
-                        <span class="navbar-brand-ms">MS</span>
+                    <a class="navbar-brand me-4 d-inline-flex align-items-center" href="index.html">
+                        <img src="img/logo.svg" alt="MS by Marcela Segura" class="brand-logo-img" style="height: 60px;">
                     </a>
                     <p class="small text-white-50 mt-2">Boutique de alta costura especializada en bodys de diseño,
                         pijamas en satén de seda y accesorios exclusivos.</p>

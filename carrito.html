@@ -44,15 +44,15 @@
     <!-- NAVBAR FIJO MS BOUTIQUE -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand me-4" href="index.html">
-                <span class="navbar-brand-ms">MS</span>
+            <a class="navbar-brand me-4 d-inline-flex align-items-center" href="index.html">
+                <img src="img/logo.svg" alt="MS by Marcela Segura" class="brand-logo-img">
             </a>
             
             <div class="d-flex align-items-center gap-3 order-lg-3">
-                <a href="carrito.html" class="cart-icon-container" title="Ver Bolsa de Compras">
+                <div class="cart-icon-container" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" title="Ver Tu Carrito">
                     <i class="bi bi-bag"></i>
                     <span class="cart-counter">0</span>
-                </a>
+                </div>
                 <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -145,7 +145,7 @@
 
                         <button type="submit" class="btn btn-boutique-primary w-100 py-3 text-center rounded-pill mt-2">
                             <i class="bi bi-whatsapp fs-5 me-2"></i>
-                            <span>Revisar y Enviar a WhatsApp</span>
+                            <span class="fw-bold letter-spacing-1">REALIZAR PEDIDO</span>
                         </button>
                     </form>
                 </div>
@@ -188,6 +188,31 @@
                     </button>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- OFFCANVAS CARRITO COMPONENT -->
+    <div class="offcanvas offcanvas-end offcanvas-cart" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+        <div class="offcanvas-header">
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-bag-fill text-gold fs-5"></i>
+                <h5 class="offcanvas-title font-heading fw-bold mb-0 text-uppercase letter-spacing-1 text-white fs-6" id="offcanvasCartLabel">TU CARRITO</h5>
+                <span class="badge rounded-circle bg-gold text-dark cart-counter" id="offcanvas-header-counter">0</span>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3" id="offcanvas-cart-items">
+            <!-- Renderizado dinámico desde carrito.js -->
+        </div>
+        <div class="offcanvas-footer p-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="cart-subtotal-label">SUBTOTAL</span>
+                <span class="cart-subtotal-amount" id="offcanvas-cart-total">$0</span>
+            </div>
+            <a href="carrito.html" class="btn btn-boutique-primary w-100 py-3 text-center fw-bold text-uppercase d-flex align-items-center justify-content-center gap-2">
+                <span>FINALIZAR PEDIDO</span>
+                <i class="bi bi-bag"></i>
+            </a>
         </div>
     </div>
 

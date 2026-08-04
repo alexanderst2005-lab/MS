@@ -72,8 +72,7 @@ const agregarAlCarrito = (productoId, tallaSeleccionada = null, cantidad = 1) =>
     }
 
     guardarCarrito(carrito);
-    const mensajeTalla = talla ? ` (Talla ${talla})` : '';
-    mostrarToastNotificacion(`¡${producto.nombre}${mensajeTalla} agregado a tu bolsa!`);
+    mostrarToastNotificacion(producto.nombre, talla);
 };
 
 // Modificar cantidad de un ítem (+ / -)
@@ -108,20 +107,23 @@ const vaciarCarrito = () => {
     }
 };
 
-// Renderizar el contenido del Offcanvas (Drawer Lateral) con diseño estricto y compacto
+// Renderizar el contenido del Offcanvas (Drawer Lateral) con el diseño exacto de la imagen
 const renderizarOffcanvasCarrito = () => {
     const contenedorItems = document.getElementById('offcanvas-cart-items');
     const totalElemento = document.getElementById('offcanvas-cart-total');
+    const counterHeader = document.getElementById('offcanvas-header-counter');
     if (!contenedorItems) return;
 
     const carrito = obtenerCarrito();
+    const totalCantidadItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+    if (counterHeader) counterHeader.innerText = totalCantidadItems;
 
     if (carrito.length === 0) {
         contenedorItems.innerHTML = `
             <div class="text-center py-5">
-                <i class="bi bi-bag-heart text-muted display-1"></i>
-                <p class="mt-3 text-muted fw-medium font-heading fs-5">Tu bolsa de compras está vacía.</p>
-                <a href="catalogo.html" class="btn btn-boutique-outline btn-sm mt-2">Explorar Catálogo MS</a>
+                <i class="bi bi-bag-heart text-muted display-3"></i>
+                <p class="mt-3 text-muted fw-medium font-heading fs-6">Tu carrito está vacío.</p>
+                <a href="catalogo.html" class="btn btn-boutique-outline btn-sm mt-2">Explorar Catálogo</a>
             </div>
         `;
         if (totalElemento) totalElemento.innerText = formatearMoneda(0);
@@ -135,45 +137,43 @@ const renderizarOffcanvasCarrito = () => {
         const subtotal = item.precio * item.cantidad;
         totalGeneral += subtotal;
 
-        const htmlTalla = item.talla ? `<span class="badge bg-dark text-warning me-1" style="font-size:0.7rem;">Talla: ${item.talla}</span>` : '<span class="badge bg-secondary me-1" style="font-size:0.7rem;">Sin Talla</span>';
+        const textoTalla = item.talla ? `Talla: ${item.talla}` : 'Talla por defecto';
         const imgItem = (item.imagen && item.imagen.trim() !== '') ? item.imagen : window.PLACEHOLDER_SVG;
 
         html += `
-            <div class="cart-item-card p-2 border rounded-3 mb-3 bg-white shadow-sm">
-                <div class="d-flex align-items-center gap-3">
-                    <!-- Contenedor estricto de imagen 70x70px -->
-                    <div class="cart-item-img-box">
+            <div class="cart-item-row p-3 mb-3">
+                <div class="d-flex gap-3 align-items-center">
+                    <!-- Imagen Cuadrada 75x75px -->
+                    <div class="cart-item-img-container">
                         <img src="${imgItem}" 
                              alt="${item.nombre}" 
-                             onerror="this.onerror=null; this.src=window.PLACEHOLDER_SVG;" 
-                             class="cart-item-img">
+                             onerror="this.onerror=null; this.src=window.PLACEHOLDER_SVG;">
                     </div>
                     
-                    <!-- Información detallada del producto -->
+                    <!-- Contenido principal -->
                     <div class="flex-grow-1 overflow-hidden">
-                        <div class="text-uppercase text-warning fw-bold small" style="font-size: 0.65rem; letter-spacing: 1px;">${item.categoria}</div>
-                        <h6 class="mb-1 text-truncate font-heading fw-bold" style="font-size: 0.95rem;">${item.nombre}</h6>
-                        <div class="d-flex align-items-center gap-1 mb-1">
-                            ${htmlTalla}
-                            <span class="text-muted small">${formatearMoneda(item.precio)} u.</span>
+                        <!-- Título y Basura -->
+                        <div class="d-flex justify-content-between align-items-start gap-2 mb-1">
+                            <h6 class="cart-item-title mb-0 text-truncate">${item.nombre}</h6>
+                            <button class="btn btn-sm btn-link cart-delete-btn p-0 border-0 ms-1" 
+                                    onclick="eliminarDelCarrito(${item.id}, '${item.talla}')" 
+                                    title="Eliminar este producto">
+                                <i class="bi bi-trash"></i>
+                            </button>
                         </div>
-                        <div class="fw-bold text-dark small">
-                            Subtotal: <span class="text-primary-dark">${formatearMoneda(subtotal)}</span>
-                        </div>
-                    </div>
-
-                    <!-- Botón Eliminar y Selector + / - -->
-                    <div class="d-flex flex-column align-items-end justify-content-between gap-2">
-                        <button class="btn btn-sm btn-outline-danger border-0 px-2 py-1" 
-                                onclick="eliminarDelCarrito(${item.id}, '${item.talla}')" 
-                                title="Eliminar este producto">
-                            <i class="bi bi-trash fs-5"></i>
-                        </button>
                         
-                        <div class="btn-group btn-group-sm border rounded-pill bg-light">
-                            <button class="btn btn-sm btn-light px-2 py-0" onclick="cambiarCantidadItem(${item.id}, '${item.talla}', -1)">-</button>
-                            <span class="px-2 align-self-center font-monospace fw-bold small">${item.cantidad}</span>
-                            <button class="btn btn-sm btn-light px-2 py-0" onclick="cambiarCantidadItem(${item.id}, '${item.talla}', 1)">+</button>
+                        <!-- Talla -->
+                        <div class="cart-item-subtitle mb-2">${textoTalla}</div>
+                        
+                        <!-- Precio y Controles (+ / -) -->
+                        <div class="d-flex justify-content-between align-items-center mt-1">
+                            <span class="cart-item-price">${formatearMoneda(subtotal)}</span>
+                            
+                            <div class="cart-qty-pill">
+                                <button onclick="cambiarCantidadItem(${item.id}, '${item.talla}', -1)">-</button>
+                                <span>${item.cantidad}</span>
+                                <button onclick="cambiarCantidadItem(${item.id}, '${item.talla}', 1)">+</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -185,8 +185,8 @@ const renderizarOffcanvasCarrito = () => {
     if (totalElemento) totalElemento.innerText = formatearMoneda(totalGeneral);
 };
 
-// Toast Notificación
-const mostrarToastNotificacion = (mensaje) => {
+// Toast Notificación Compacto & Elegante
+const mostrarToastNotificacion = (nombreProducto, talla = '') => {
     let toast = document.getElementById('toast-notification');
     if (!toast) {
         toast = document.createElement('div');
@@ -195,12 +195,26 @@ const mostrarToastNotificacion = (mensaje) => {
         document.body.appendChild(toast);
     }
 
-    toast.innerHTML = `<i class="bi bi-check-circle-fill text-warning me-2"></i> <span>${mensaje}</span>`;
+    const badgeTalla = talla ? `<span class="badge bg-gold text-dark ms-1" style="font-size: 0.62rem; padding: 2px 5px;">${talla}</span>` : '';
+
+    toast.innerHTML = `
+        <div class="toast-icon-box">
+            <i class="bi bi-bag-check-fill"></i>
+        </div>
+        <div class="toast-content-text">
+            <div class="toast-title">${nombreProducto} ${badgeTalla}</div>
+            <div class="toast-sub">¡Agregado a tu bolsa!</div>
+        </div>
+    `;
+
+    toast.classList.remove('show');
+    void toast.offsetWidth; // Reflow para reiniciar animación spring
     toast.classList.add('show');
 
-    setTimeout(() => {
+    if (window.toastTimeout) clearTimeout(window.toastTimeout);
+    window.toastTimeout = setTimeout(() => {
         toast.classList.remove('show');
-    }, 3000);
+    }, 2800);
 };
 
 document.addEventListener('DOMContentLoaded', () => {

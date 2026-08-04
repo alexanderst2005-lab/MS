@@ -44,15 +44,15 @@
     <!-- NAVBAR OSCURO ELEGANTE CON LOGO MS PROTAGONISTA -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand me-4" href="index.html">
-                <span class="navbar-brand-ms">MS</span>
+            <a class="navbar-brand me-4 d-inline-flex align-items-center" href="index.html">
+                <img src="img/logo.svg" alt="MS by Marcela Segura" class="brand-logo-img">
             </a>
             
             <div class="d-flex align-items-center gap-3 order-lg-3">
-                <a href="carrito.html" class="cart-icon-container" title="Ver Bolsa de Compras">
+                <div class="cart-icon-container" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" title="Ver Tu Carrito">
                     <i class="bi bi-bag"></i>
                     <span class="cart-counter">0</span>
-                </a>
+                </div>
 
                 <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
@@ -86,8 +86,8 @@
                     <span class="badge bg-white text-dark border border-warning px-3 py-2 rounded-pill font-body small fw-semibold mb-3 d-inline-block letter-spacing-2 text-uppercase">
                         ALTA MODA & ELEGANCIA EXCLUSIVA
                     </span>
-                    <h1 class="hero-title">Estilo, Sensualidad & <span>Sofisticación</span></h1>
-                    <p class="hero-subtitle">Descubre nuestra colección exclusiva en bodys de silueta perfecta, pijamas en seda satén y accesorios diseñados para deslumbrar.</p>
+                    <h1 class="hero-title">Elegancia para Cada <span>Momento</span></h1>
+                    <p class="hero-subtitle">Descubre bodys, pijamas y accesorios exclusivos que combinan estilo, comodidad y sofisticación para resaltar tu esencia.</p>
                     <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
                         <a href="catalogo.html" class="btn btn-boutique-primary">
                             <span>Comprar Ahora</span>
@@ -95,11 +95,14 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6 hero-image-wrapper fade-in-up delay-2 mt-4 mt-lg-0">
-                    <img src="img/productos/hero-placeholder.jpg" 
-                         alt="Colección MS Boutique" 
-                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'500\' viewBox=\'0 0 600 500\'><rect width=\'600\' height=\'500\' fill=\'%23121212\'/><text x=\'50%\' y=\'45%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Playfair Display, serif\' font-size=\'60\' font-weight=\'bold\' fill=\'%23C5A880\'>MS</text><text x=\'50%\' y=\'58%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Poppins, sans-serif\' font-size=\'14\' font-weight=\'500\' fill=\'%23E5E5E5\' letter-spacing=\'3\'>BOUTIQUE EXCLUSIVA</text></svg>';" 
-                         class="img-fluid">
+                <div class="col-lg-6 fade-in-up delay-2 mt-4 mt-lg-0">
+                    <div class="hero-logo-showcase p-4 p-md-5 text-center d-flex flex-column align-items-center justify-content-center">
+                        <img src="img/logo.svg" 
+                             alt="MS by Marcela Segura - Logo Oficial" 
+                             class="img-fluid hero-logo-main p-2" 
+                             style="max-width: 380px; width: 100%; filter: drop-shadow(0 15px 35px rgba(197, 168, 128, 0.35));">
+                        <span class="badge bg-gold text-dark font-body px-3 py-1.5 rounded-pill letter-spacing-2 mt-3 text-uppercase fw-semibold" style="font-size: 0.72rem;">Boutique Oficial</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,48 +111,37 @@
     <!-- BARRA DE BENEFICIOS -->
     <div class="container">
         <div class="benefits-section fade-in-up delay-1">
-            <div class="row g-4">
-                <div class="col-6 col-md-3">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-4">
                     <div class="benefit-item">
                         <div class="benefit-icon">
                             <i class="bi bi-truck"></i>
                         </div>
                         <div>
-                            <div class="benefit-title">Envíos VIP</div>
-                            <div class="benefit-desc">Cobertura a todo el país</div>
+                            <div class="benefit-title">Envíos Nacionales</div>
+                            <div class="benefit-desc">Cobertura en todo Colombia.</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-3">
+                <div class="col-12 col-md-4">
                     <div class="benefit-item">
                         <div class="benefit-icon">
-                            <i class="bi bi-shield-check"></i>
+                            <i class="bi bi-shield-lock"></i>
                         </div>
                         <div>
-                            <div class="benefit-title">Calidad Garantizada</div>
-                            <div class="benefit-desc">Textiles de alta gama</div>
+                            <div class="benefit-title">Compra 100% Segura</div>
+                            <div class="benefit-desc">Paga con total confianza.</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-3">
+                <div class="col-12 col-md-4">
                     <div class="benefit-item">
                         <div class="benefit-icon">
-                            <i class="bi bi-gem"></i>
+                            <i class="bi bi-chat-dots"></i>
                         </div>
                         <div>
-                            <div class="benefit-title">Diseño Exclusivo</div>
-                            <div class="benefit-desc">Detalles finos & acabados</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="bi bi-whatsapp"></i>
-                        </div>
-                        <div>
-                            <div class="benefit-title">Asesoría Personal</div>
-                            <div class="benefit-desc">Atención por WhatsApp</div>
+                            <div class="benefit-title">Atención Personalizada</div>
+                            <div class="benefit-desc">Asesoría rápida por WhatsApp.</div>
                         </div>
                     </div>
                 </div>
@@ -213,10 +205,35 @@
             <a href="catalogo.html" class="btn btn-boutique-outline btn-sm">Ver Todo <i class="bi bi-chevron-right"></i></a>
         </div>
         
-        <div class="row" id="productos-destacados-container">
+        <div class="row g-3" id="productos-destacados-container">
             <!-- Renderizado dinámico desde app.js -->
         </div>
     </section>
+
+    <!-- OFFCANVAS CARRITO COMPONENT -->
+    <div class="offcanvas offcanvas-end offcanvas-cart" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+        <div class="offcanvas-header">
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-bag-fill text-gold fs-5"></i>
+                <h5 class="offcanvas-title font-heading fw-bold mb-0 text-uppercase letter-spacing-1 text-white fs-6" id="offcanvasCartLabel">TU CARRITO</h5>
+                <span class="badge rounded-circle bg-gold text-dark cart-counter" id="offcanvas-header-counter">0</span>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-3" id="offcanvas-cart-items">
+            <!-- Renderizado dinámico desde carrito.js -->
+        </div>
+        <div class="offcanvas-footer p-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="cart-subtotal-label">SUBTOTAL</span>
+                <span class="cart-subtotal-amount" id="offcanvas-cart-total">$0</span>
+            </div>
+            <a href="carrito.html" class="btn btn-boutique-primary w-100 py-3 text-center fw-bold text-uppercase d-flex align-items-center justify-content-center gap-2">
+                <span>FINALIZAR PEDIDO</span>
+                <i class="bi bi-bag"></i>
+            </a>
+        </div>
+    </div>
 
     <!-- BOTÓN FLOTANTE WHATSAPP -->
     <a href="https://api.whatsapp.com/send?phone=573164291771&text=Hola%20MS%20Boutique,%20deseo%20realizar%20una%20consulta." target="_blank" class="whatsapp-float pulse-subtle" title="Contacto por WhatsApp">
@@ -228,8 +245,8 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4 mb-3">
-                    <a class="navbar-brand me-4" href="index.html">
-                        <span class="navbar-brand-ms">MS</span>
+                    <a class="navbar-brand me-4 d-inline-flex align-items-center" href="index.html">
+                        <img src="img/logo.svg" alt="MS by Marcela Segura" class="brand-logo-img" style="height: 60px;">
                     </a>
                     <p class="small text-white-50 mt-2">Boutique de alta costura especializada en bodys de diseño, pijamas en satén de seda y accesorios exclusivos.</p>
                     <div class="footer-social-icons mt-3">
