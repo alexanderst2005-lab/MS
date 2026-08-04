@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto & FAQ | MS Boutique</title>
+    <meta name="description" content="Ponte en contacto con el equipo de atención al cliente de MS Boutique. Asesoría directa por WhatsApp y soporte exclusivo.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Custom Design CSS -->
+    <link href="css/estilos.css" rel="stylesheet">
+    <link href="css/animaciones.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR FIJO MS BOUTIQUE -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand me-4" href="index.html">
+                <span class="navbar-brand-ms">MS</span>
+            </a>
+            
+            <div class="d-flex align-items-center gap-3 order-lg-3">
+                <div class="cart-icon-container" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                    <i class="bi bi-bag"></i>
+                    <span class="cart-counter">0</span>
+                </div>
+                <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link-ms" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link-ms" href="catalogo.html?categoria=bodys">Bodys</a></li>
+                    <li class="nav-item"><a class="nav-link-ms" href="catalogo.html?categoria=pijamas">Pijamas</a></li>
+                    <li class="nav-item"><a class="nav-link-ms" href="catalogo.html?categoria=accesorios">Accesorios</a></li>
+                    <li class="nav-item"><a class="nav-link-ms active" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER CONTACTO -->
+    <section class="py-5 text-center" style="background: linear-gradient(135deg, #FAF7F2 0%, #F5EFE6 100%);">
+        <div class="container fade-in-up">
+            <h1 class="font-heading fw-bold fs-1">Atención al Cliente MS</h1>
+            <p class="text-muted font-heading fs-5 max-w-600 mx-auto">Estamos a tu disposición para brindarte la mejor asesoría en alta moda.</p>
+        </div>
+    </section>
+
+    <!-- FORMULARIO & FAQ -->
+    <section class="container my-5">
+        <div class="row g-5">
+            <!-- CANALES DE CONTACTO DIRECTO -->
+            <div class="col-lg-5 fade-in-up">
+                <div class="card border-0 shadow-sm rounded-4 p-4 mb-4" style="border: 1px solid rgba(197, 168, 128, 0.2) !important;">
+                    <h4 class="font-heading fw-bold mb-4 fs-3">Atención Directa</h4>
+                    
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="benefit-icon bg-success text-white">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-0 font-heading">Asesoría Inmediata por WhatsApp</h6>
+                            <a href="https://api.whatsapp.com/send?phone=573000000000" target="_blank" class="text-success small fw-bold">+57 300 000 0000</a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="benefit-icon">
+                            <i class="bi bi-envelope-at"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-0 font-heading">Correo Electrónico</h6>
+                            <span class="text-muted small">info@msboutique.com</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="benefit-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-0 font-heading">Envíos Exclusivos</h6>
+                            <span class="text-muted small">Despachos nacionales a todo el país</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PREGUNTAS FRECUENTES -->
+                <div class="card border-0 shadow-sm rounded-4 p-4" style="border: 1px solid rgba(197, 168, 128, 0.2) !important;">
+                    <h5 class="font-heading fw-bold mb-3 fs-4">Preguntas Frecuentes</h5>
+                    <div class="accordion accordion-flush" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed font-heading small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    ¿Cómo finalizo la compra de mis productos?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body small text-muted">
+                                    Al presionar "Enviar Orden a WhatsApp", serás redirigido con tu mensaje listo. Tu asesor personal te guiará con los datos de pago y seguimiento del paquete.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed font-heading small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    ¿Qué tallas manejan en MS Boutique?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body small text-muted">
+                                    Bodys y Pijamas están disponibles en tallas **S, M y L**. Los accesorios no manejan talla.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMULARIO DE CONSULTAS -->
+            <div class="col-lg-7 fade-in-up delay-1">
+                <div class="card border-0 shadow-sm rounded-4 p-4" style="border: 1px solid rgba(197, 168, 128, 0.2) !important;">
+                    <h4 class="font-heading fw-bold mb-3 fs-3">Envíanos tu Consulta</h4>
+                    <form onsubmit="alert('¡Gracias por tu mensaje! Te contactaremos a la brevedad.'); return false;">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold text-muted text-uppercase">Nombre Completo *</label>
+                                <input type="text" class="form-control rounded-3" required placeholder="Nombre">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold text-muted text-uppercase">Correo Electrónico *</label>
+                                <input type="email" class="form-control rounded-3" required placeholder="ejemplo@correo.com">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold text-muted text-uppercase">Asunto</label>
+                                <input type="text" class="form-control rounded-3" placeholder="Asunto de la consulta...">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold text-muted text-uppercase">Mensaje *</label>
+                                <textarea class="form-control rounded-3" rows="4" required placeholder="Escribe aquí tu consulta..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-boutique-primary rounded-pill px-4">Enviar Consulta</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER BOUTIQUE MS -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-3">
+                    <a class="navbar-brand me-4" href="index.html">
+                        <span class="navbar-brand-ms">MS</span>
+                    </a>
+                    <p class="small text-white-50 mt-2">Boutique de alta costura especializada en bodys de diseño, pijamas en satén de seda y accesorios exclusivos.</p>
+                </div>
+                <div class="col-6 col-lg-3 mb-3">
+                    <h5>Navegación</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="index.html">Inicio</a></li>
+                        <li class="mb-2"><a href="catalogo.html?categoria=bodys">Bodys</a></li>
+                        <li class="mb-2"><a href="catalogo.html?categoria=pijamas">Pijamas</a></li>
+                        <li class="mb-2"><a href="catalogo.html?categoria=accesorios">Accesorios</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5>Atención</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="contacto.html">Contacto & FAQ</a></li>
+                        <li class="mb-2"><a href="carrito.html">Mi Bolsa</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <h5>Contacto Directo</h5>
+                    <ul class="list-unstyled small text-white-50">
+                        <li class="mb-2"><i class="bi bi-whatsapp text-success me-2"></i> +57 300 000 0000</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@msboutique.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary pt-3 mt-4 text-center small text-white-50">
+                &copy; 2026 MS Boutique. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/whatsapp.js"></script>
+</body>
+</html>

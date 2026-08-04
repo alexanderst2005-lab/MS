@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS | Boutique Exclusiva de Bodys, Pijamas y Accesorios</title>
+    <meta name="description" content="Descubre la colección más exclusiva de bodys, pijamas en satén de seda y accesorios de alta moda en MS Boutique.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Custom Design CSS -->
+    <link href="css/estilos.css" rel="stylesheet">
+    <link href="css/animaciones.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR OSCURO ELEGANTE CON LOGO MS PROTAGONISTA -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand me-4" href="index.html">
+                <span class="navbar-brand-ms">MS</span>
+            </a>
+            
+            <div class="d-flex align-items-center gap-3 order-lg-3">
+                <div class="d-none d-sm-block">
+                    <input type="text" class="search-input-navbar" id="search-navbar-input" placeholder="Buscar en MS Boutique...">
+                </div>
+                
+                <div class="cart-icon-container" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                    <i class="bi bi-bag"></i>
+                    <span class="cart-counter">0</span>
+                </div>
+
+                <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link-ms active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-ms" href="catalogo.html?categoria=bodys">Bodys</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-ms" href="catalogo.html?categoria=pijamas">Pijamas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-ms" href="catalogo.html?categoria=accesorios">Accesorios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-ms" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION MODERNO & LIMPIO -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start fade-in-up">
+                    <span class="badge bg-white text-dark border border-warning px-3 py-2 rounded-pill font-body small fw-semibold mb-3 d-inline-block letter-spacing-2 text-uppercase">
+                        ALTA MODA & ELEGANCIA EXCLUSIVA
+                    </span>
+                    <h1 class="hero-title">Estilo, Sensualidad & <span>Sofisticación</span></h1>
+                    <p class="hero-subtitle">Descubre nuestra colección exclusiva en bodys de silueta perfecta, pijamas en seda satén y accesorios diseñados para deslumbrar.</p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                        <a href="catalogo.html" class="btn btn-boutique-primary">
+                            <span>Comprar Ahora</span>
+                            <i class="bi bi-arrow-right-short fs-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-image-wrapper fade-in-up delay-2 mt-4 mt-lg-0">
+                    <img src="img/productos/hero-placeholder.jpg" 
+                         alt="Colección MS Boutique" 
+                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'500\' viewBox=\'0 0 600 500\'><rect width=\'600\' height=\'500\' fill=\'%23121212\'/><text x=\'50%\' y=\'45%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Playfair Display, serif\' font-size=\'60\' font-weight=\'bold\' fill=\'%23C5A880\'>MS</text><text x=\'50%\' y=\'58%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Poppins, sans-serif\' font-size=\'14\' font-weight=\'500\' fill=\'%23E5E5E5\' letter-spacing=\'3\'>BOUTIQUE EXCLUSIVA</text></svg>';" 
+                         class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BARRA DE BENEFICIOS -->
+    <div class="container">
+        <div class="benefits-section fade-in-up delay-1">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="bi bi-truck"></i>
+                        </div>
+                        <div>
+                            <div class="benefit-title">Envíos VIP</div>
+                            <div class="benefit-desc">Cobertura a todo el país</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div>
+                            <div class="benefit-title">Calidad Garantizada</div>
+                            <div class="benefit-desc">Textiles de alta gama</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="bi bi-gem"></i>
+                        </div>
+                        <div>
+                            <div class="benefit-title">Diseño Exclusivo</div>
+                            <div class="benefit-desc">Detalles finos & acabados</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+                        <div>
+                            <div class="benefit-title">Asesoría Personal</div>
+                            <div class="benefit-desc">Atención por WhatsApp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE CATEGORÍAS PRINCIPALES -->
+    <section class="container my-5 py-4">
+        <div class="text-center mb-5 fade-in-up">
+            <h2 class="font-heading fw-bold fs-1">Nuestras Colecciones</h2>
+            <p class="text-muted font-heading fs-5">Selección exclusiva para cada momento</p>
+        </div>
+        <div class="row g-4">
+            <!-- Categoría 1: Bodys -->
+            <div class="col-md-4 fade-in-up delay-1">
+                <div class="category-card" onclick="window.location.href='catalogo.html?categoria=bodys'">
+                    <img src="img/productos/cat-bodys.jpg" 
+                         alt="Bodys MS Boutique"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23121212\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Playfair Display, serif\' font-size=\'32\' font-weight=\'bold\' fill=\'%23C5A880\'>BODYS</text></svg>';">
+                    <div class="category-card-overlay">
+                        <h3 class="font-heading fw-bold mb-1 fs-2">Bodys</h3>
+                        <p class="mb-0 text-white-50 small font-body">Encajes, seda y cortes asimétricos <i class="bi bi-chevron-right ms-1"></i></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Categoría 2: Pijamas -->
+            <div class="col-md-4 fade-in-up delay-2">
+                <div class="category-card" onclick="window.location.href='catalogo.html?categoria=pijamas'">
+                    <img src="img/productos/cat-pijamas.jpg" 
+                         alt="Pijamas MS Boutique"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23121212\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Playfair Display, serif\' font-size=\'32\' font-weight=\'bold\' fill=\'%23C5A880\'>PIJAMAS</text></svg>';">
+                    <div class="category-card-overlay">
+                        <h3 class="font-heading fw-bold mb-1 fs-2">Pijamas</h3>
+                        <p class="mb-0 text-white-50 small font-body">Satén de seda, kimonos & terciopelo <i class="bi bi-chevron-right ms-1"></i></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Categoría 3: Accesorios -->
+            <div class="col-md-4 fade-in-up delay-3">
+                <div class="category-card" onclick="window.location.href='catalogo.html?categoria=accesorios'">
+                    <img src="img/productos/cat-accesorios.jpg" 
+                         alt="Accesorios MS Boutique"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23121212\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Playfair Display, serif\' font-size=\'32\' font-weight=\'bold\' fill=\'%23C5A880\'>ACCESORIOS</text></svg>';">
+                    <div class="category-card-overlay">
+                        <h3 class="font-heading fw-bold mb-1 fs-2">Accesorios</h3>
+                        <p class="mb-0 text-white-50 small font-body">Cinturones dorados, seda & batas couture <i class="bi bi-chevron-right ms-1"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PRODUCTOS DESTACADOS (TARJETAS COMPACTAS 4 POR FILA) -->
+    <section class="container my-5 py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2 class="font-heading fw-bold mb-1 fs-2">Piezas Destacadas</h2>
+                <p class="text-muted mb-0 small">Lo más aclamado de nuestra colección</p>
+            </div>
+            <a href="catalogo.html" class="btn btn-boutique-outline btn-sm">Ver Todo <i class="bi bi-chevron-right"></i></a>
+        </div>
+        
+        <div class="row" id="productos-destacados-container">
+            <!-- Renderizado dinámico desde app.js -->
+        </div>
+    </section>
+
+    <!-- OFFCANVAS CARRITO -->
+    <div class="offcanvas offcanvas-end offcanvas-cart" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title font-heading fw-bold" id="offcanvasCartLabel">
+                <i class="bi bi-bag me-2 text-warning"></i> Bolsa de Compras MS
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="offcanvas-cart-items">
+            <!-- Items renderizados dinámicamente -->
+        </div>
+        <div class="offcanvas-footer p-3 border-top bg-light">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="fw-bold font-heading">Total estimado:</span>
+                <span class="fs-4 fw-bold text-dark font-body" id="offcanvas-cart-total">$0</span>
+            </div>
+            <div class="d-grid gap-2">
+                <a href="carrito.html" class="btn btn-boutique-primary py-3 text-center">
+                    <span>Finalizar Pedido</span>
+                    <i class="bi bi-whatsapp ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://api.whatsapp.com/send?phone=573000000000&text=Hola%20MS%20Boutique,%20deseo%20realizar%20una%20consulta." target="_blank" class="whatsapp-float pulse-subtle" title="Contacto por WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- FOOTER BOUTIQUE MS OSCURO ELEGANTE -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-3">
+                    <a class="navbar-brand me-4" href="index.html">
+                        <span class="navbar-brand-ms">MS</span>
+                    </a>
+                    <p class="small text-white-50 mt-2">Boutique de alta costura especializada en bodys de diseño, pijamas en satén de seda y accesorios exclusivos.</p>
+                    <div class="footer-social-icons mt-3">
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-3">
+                    <h5>Navegación</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="index.html">Inicio</a></li>
+                        <li class="mb-2"><a href="catalogo.html?categoria=bodys">Bodys</a></li>
+                        <li class="mb-2"><a href="catalogo.html?categoria=pijamas">Pijamas</a></li>
+                        <li class="mb-2"><a href="catalogo.html?categoria=accesorios">Accesorios</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5>Atención</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="contacto.html">Contacto & FAQ</a></li>
+                        <li class="mb-2"><a href="carrito.html">Mi Bolsa</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <h5>Contacto Directo</h5>
+                    <ul class="list-unstyled small text-white-50">
+                        <li class="mb-2"><i class="bi bi-whatsapp text-success me-2"></i> +57 300 000 0000</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@msboutique.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top border-secondary pt-3 mt-4 text-center small text-white-50">
+                &copy; 2026 MS Boutique. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

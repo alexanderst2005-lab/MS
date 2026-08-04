@@ -1,0 +1,54 @@
+/* ==========================================================================
+   ESTILOS RESPONSIVOS Y BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-section {
+        padding: 3rem 0 2rem;
+        text-align: center;
+    }
+
+    .hero-image-wrapper {
+        margin-top: 2rem;
+    }
+
+    .hero-image-wrapper img {
+        height: 350px;
+    }
+
+    .benefits-section {
+        margin-top: 1rem;
+    }
+
+    .offcanvas-cart {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .benefit-item {
+        margin-bottom: 1rem;
+    }
+
+    .category-card {
+        height: 220px;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 20px;
+        right: 20px;
+    }
+}

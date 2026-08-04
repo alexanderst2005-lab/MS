@@ -1,0 +1,24 @@
+====================================================================
+GUÍA DE INSTRUCCIONES PARA AGREGAR TUS FOTOGRAFÍAS - MS BOUTIQUE
+====================================================================
+
+¡Tu tienda ya está lista con un sistema de reserva de espacio (placeholder) elegante!
+
+Para poner tus propias fotografías de productos:
+
+1. Copia tus archivos de imagen a esta carpeta ('img/productos/').
+   Ejemplos de nombres de archivo recomendados:
+   - body-1.jpg
+   - body-2.jpg
+   - pijama-1.jpg
+   - accesorio-1.jpg
+
+2. Abre el archivo 'js/productos.js' en tu editor de código.
+
+3. En el producto correspondiente, actualiza la propiedad 'imagenes' con el nombre de tu foto:
+   
+   Ejemplo:
+   imagenes: ["img/productos/mi-foto-body.jpg"]
+
+4. ¡Listo! Al guardar el archivo, tu página web mostrará automáticamente tus fotografías reales.
+====================================================================
