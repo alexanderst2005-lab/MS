@@ -142,23 +142,13 @@ const productos = [
     },
     {
         id: 15,
-        nombre: "Collar Lazo San Francisco (Modelo 1)",
+        nombre: "Collar Lazo San Francisco",
         precio: 30000,
         categoria: "accesorios",
         tallas: [],
-        descripcion: "Diseño delicado y femenino con acabado elegante.",
+        descripcion: "Diseño delicado y femenino con acabado elegante en rodio.",
         imagenes: ["img/productos/collar-lazo-1.jpg"],
         destacado: true
-    },
-    {
-        id: 16,
-        nombre: "Collar Lazo San Francisco (Modelo 2)",
-        precio: 30000,
-        categoria: "accesorios",
-        tallas: [],
-        descripcion: "Collar moderno y versátil para cualquier ocasión.",
-        imagenes: ["img/productos/collar-lazo-1.jpg"],
-        destacado: false
     },
     {
         id: 17,
