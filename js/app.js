@@ -84,6 +84,17 @@ const crearTarjetaProductoHTML = (producto) => {
     const rutaImagen = (producto.imagenes && producto.imagenes[0]) ? producto.imagenes[0] : window.PLACEHOLDER_SVG;
     const nombreLimpio = producto.nombre.replace(/'/g, "\\'");
 
+    let categoriaEtiqueta = producto.categoria || '';
+    if (categoriaEtiqueta.toLowerCase() === 'splash') {
+        categoriaEtiqueta = 'Productos Purpure';
+    } else if (categoriaEtiqueta.toLowerCase() === 'pijamas') {
+        categoriaEtiqueta = 'Pijamas';
+    } else if (categoriaEtiqueta.toLowerCase() === 'accesorios') {
+        categoriaEtiqueta = 'Accesorios';
+    } else if (categoriaEtiqueta.toLowerCase() === 'bodys') {
+        categoriaEtiqueta = 'Bodys';
+    }
+
     return `
         <div class="col-6 col-md-4 col-xl-3 mb-3 fade-in-up">
             <div class="product-card-premium">
@@ -97,7 +108,7 @@ const crearTarjetaProductoHTML = (producto) => {
                     </div>
                 </div>
                 <div class="product-body-content">
-                    <div class="product-category-tag">${producto.categoria}</div>
+                    <div class="product-category-tag">${categoriaEtiqueta}</div>
                     <h5 class="product-title-text" title="${producto.nombre}">${producto.nombre}</h5>
                     <div class="product-price-tag">${formatearMoneda(producto.precio)}</div>
                     
