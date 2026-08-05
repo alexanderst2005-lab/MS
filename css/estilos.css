@@ -1026,3 +1026,23 @@ footer a:hover {
     font-weight: 500;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
 }
+
+/* TARJETA DE FILTROS RESPONSIVA MS */
+.filter-sidebar-card {
+    border: 1px solid rgba(197, 168, 128, 0.22) !important;
+}
+
+@media (min-width: 992px) {
+    .filter-sidebar-card {
+        position: sticky !important;
+        top: 100px !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .filter-sidebar-card {
+        position: relative !important;
+        top: 0 !important;
+        margin-bottom: 2.5rem !important;
+    }
+}
