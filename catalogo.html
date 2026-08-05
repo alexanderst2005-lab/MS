@@ -71,13 +71,16 @@
                         <a class="nav-link-ms" href="index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link-ms" href="catalogo.html?categoria=bodys">Bodys</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link-ms" href="catalogo.html?categoria=pijamas">Pijamas</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link-ms" href="catalogo.html?categoria=bodys">Bodys</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link-ms" href="catalogo.html?categoria=accesorios">Accesorios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-ms" href="catalogo.html?categoria=splash">Productos Purpure</a>
                     </li>
                 </ul>
             </div>
@@ -92,9 +95,9 @@
                 id="badge-categoria-header">
                 COLECCIÓN EXCLUSIVA MS
             </span>
-            <h1 class="font-heading fw-bold fs-1" id="titulo-catalogo-header">Catálogo de Alta Moda</h1>
+            <h1 class="font-heading fw-bold fs-1" id="titulo-catalogo-header">Catálogo Completo MS</h1>
             <p class="text-muted font-heading fs-5 max-w-600 mx-auto" id="subtitulo-catalogo-header">Descubre nuestras
-                piezas seleccionadas de Bodys, Pijamas en Satén de Seda y Accesorios de lujo.</p>
+                líneas exclusivas de Pijamas en Piel de Durazno, Accesorios finos y Productos Purpure.</p>
         </div>
     </section>
 
@@ -115,13 +118,15 @@
                         <div class="d-flex flex-column gap-2" id="filtro-categorias-container">
                             <button
                                 class="btn btn-sm btn-outline-secondary text-start rounded-pill px-3 active btn-boutique-primary"
-                                data-filtro-categoria="todos">Todas las colecciones</button>
+                                data-filtro-categoria="todos">Todas las colecciones (30)</button>
                             <button class="btn btn-sm btn-outline-secondary text-start rounded-pill px-3"
-                                data-filtro-categoria="bodys">Bodys (6)</button>
+                                data-filtro-categoria="pijamas">Pijamas (9)</button>
                             <button class="btn btn-sm btn-outline-secondary text-start rounded-pill px-3"
-                                data-filtro-categoria="pijamas">Pijamas (10)</button>
+                                data-filtro-categoria="bodys">Bodys (Próximamente)</button>
                             <button class="btn btn-sm btn-outline-secondary text-start rounded-pill px-3"
-                                data-filtro-categoria="accesorios">Accesorios (6)</button>
+                                data-filtro-categoria="accesorios">Accesorios (16)</button>
+                            <button class="btn btn-sm btn-outline-secondary text-start rounded-pill px-3"
+                                data-filtro-categoria="splash">Productos Purpure (5)</button>
                         </div>
                     </div>
 
@@ -246,20 +251,24 @@
 
                 if (cat === 'bodys') {
                     if (tituloEl) tituloEl.innerText = 'Colección de Bodys';
-                    if (badgeEl) badgeEl.innerText = 'BODYS HAUTE COUTURE';
-                    if (subtituloEl) subtituloEl.innerText = 'Siluetas perfeccionadas, encajes franceses y cortes vanguardistas.';
+                    if (badgeEl) badgeEl.innerText = 'PRÓXIMAMENTE';
+                    if (subtituloEl) subtituloEl.innerText = 'Muy pronto tendremos nuevos modelos disponibles.';
                 } else if (cat === 'pijamas') {
                     if (tituloEl) tituloEl.innerText = 'Colección de Pijamas';
-                    if (badgeEl) badgeEl.innerText = 'PIJAMAS EN SATÉN DE SEDA';
-                    if (subtituloEl) subtituloEl.innerText = 'Pijamas de seda satén, kimonos refinados y terciopelo soft.';
+                    if (badgeEl) badgeEl.innerText = 'PIJAMAS PIEL DURAZNO';
+                    if (subtituloEl) subtituloEl.innerText = 'Suave, cómoda y perfecta para un descanso con estilo.';
                 } else if (cat === 'accesorios') {
                     if (tituloEl) tituloEl.innerText = 'Accesorios Exclusivos';
-                    if (badgeEl) badgeEl.innerText = 'ACCESORIOS DE LUJO';
-                    if (subtituloEl) subtituloEl.innerText = 'Cinturones dorados, seda mulberry y batas couture.';
+                    if (badgeEl) badgeEl.innerText = 'ACCESORIOS Y JOYERÍA';
+                    if (subtituloEl) subtituloEl.innerText = 'Collares en rodio, juegos Van Cleef, camándulas y pulseras tejidas.';
+                } else if (cat === 'splash') {
+                    if (tituloEl) tituloEl.innerText = 'Productos Purpure';
+                    if (badgeEl) badgeEl.innerText = 'LÍNEA PURPURE';
+                    if (subtituloEl) subtituloEl.innerText = 'Fragancias frescas, efecto luminoso brilli brilli e hidratación profunda.';
                 } else {
-                    if (tituloEl) tituloEl.innerText = 'Catálogo de Alta Moda';
+                    if (tituloEl) tituloEl.innerText = 'Catálogo Completo MS';
                     if (badgeEl) badgeEl.innerText = 'COLECCIÓN EXCLUSIVA MS';
-                    if (subtituloEl) subtituloEl.innerText = 'Descubre nuestras piezas seleccionadas de Bodys, Pijamas en Satén de Seda y Accesorios de lujo.';
+                    if (subtituloEl) subtituloEl.innerText = 'Descubre nuestras líneas exclusivas de Pijamas, Accesorios y Productos Purpure.';
                 }
             };
 

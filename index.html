@@ -65,13 +65,16 @@
                         <a class="nav-link-ms active" href="index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link-ms" href="catalogo.html?categoria=bodys">Bodys</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link-ms" href="catalogo.html?categoria=pijamas">Pijamas</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link-ms" href="catalogo.html?categoria=bodys">Bodys</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link-ms" href="catalogo.html?categoria=accesorios">Accesorios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-ms" href="catalogo.html?categoria=splash">Productos Purpure</a>
                     </li>
                 </ul>
             </div>
@@ -87,7 +90,7 @@
                         ALTA MODA & ELEGANCIA EXCLUSIVA
                     </span>
                     <h1 class="hero-title">Elegancia para Cada <span>Momento</span></h1>
-                    <p class="hero-subtitle">Descubre bodys, pijamas y accesorios exclusivos que combinan estilo, comodidad y sofisticación para resaltar tu esencia.</p>
+                    <p class="hero-subtitle">Descubre pijamas, accesorios y productos exclusivos que combinan estilo, comodidad y sofisticación para resaltar tu esencia.</p>
                     <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
                         <a href="catalogo.html" class="btn btn-boutique-primary">
                             <span>Comprar Ahora</span>
@@ -101,7 +104,6 @@
                              alt="MS by Marcela Segura - Logo Oficial" 
                              class="img-fluid hero-logo-main p-2" 
                              style="max-width: 380px; width: 100%; filter: drop-shadow(0 15px 35px rgba(197, 168, 128, 0.35));">
-                        <span class="badge bg-gold text-dark font-body px-3 py-1.5 rounded-pill letter-spacing-2 mt-3 text-uppercase fw-semibold" style="font-size: 0.72rem;">Boutique Oficial</span>
                     </div>
                 </div>
             </div>
@@ -155,40 +157,52 @@
             <h2 class="font-heading fw-bold fs-1">Nuestras Colecciones</h2>
             <p class="text-muted font-heading fs-5">Selección exclusiva para cada momento</p>
         </div>
-        <div class="row g-4">
-            <!-- Categoría 1: Bodys -->
-            <div class="col-md-4 fade-in-up delay-1">
-                <div class="category-card" onclick="window.location.href='catalogo.html?categoria=bodys'">
-                    <img src="img/productos/cat-bodys.jpg" 
-                         alt="Bodys MS Boutique"
-                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23121212\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Playfair Display, serif\' font-size=\'32\' font-weight=\'bold\' fill=\'%23C5A880\'>BODYS</text></svg>';">
-                    <div class="category-card-overlay">
-                        <h3 class="font-heading fw-bold mb-1 fs-2">Bodys</h3>
-                        <p class="mb-0 text-white-50 small font-body">Encajes, seda y cortes asimétricos <i class="bi bi-chevron-right ms-1"></i></p>
-                    </div>
-                </div>
-            </div>
-            <!-- Categoría 2: Pijamas -->
-            <div class="col-md-4 fade-in-up delay-2">
+        <div class="row g-3">
+            <!-- Categoría 1: Pijamas -->
+            <div class="col-6 col-md-3 fade-in-up delay-1">
                 <div class="category-card" onclick="window.location.href='catalogo.html?categoria=pijamas'">
                     <img src="img/productos/cat-pijamas.jpg" 
                          alt="Pijamas MS Boutique"
                          onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23121212\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Playfair Display, serif\' font-size=\'32\' font-weight=\'bold\' fill=\'%23C5A880\'>PIJAMAS</text></svg>';">
                     <div class="category-card-overlay">
-                        <h3 class="font-heading fw-bold mb-1 fs-2">Pijamas</h3>
-                        <p class="mb-0 text-white-50 small font-body">Satén de seda, kimonos & terciopelo <i class="bi bi-chevron-right ms-1"></i></p>
+                        <h3 class="font-heading fw-bold mb-1 fs-5 text-white">Pijamas</h3>
+                        <p class="mb-0 small font-body text-gold-light">Piel de Durazno <i class="bi bi-chevron-right ms-1"></i></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Categoría 2: Bodys -->
+            <div class="col-6 col-md-3 fade-in-up delay-2">
+                <div class="category-card" onclick="window.location.href='catalogo.html?categoria=bodys'">
+                    <img src="img/productos/cat-bodys.jpg" 
+                         alt="Bodys MS Boutique"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23121212\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Playfair Display, serif\' font-size=\'32\' font-weight=\'bold\' fill=\'%23C5A880\'>BODYS</text></svg>';">
+                    <div class="category-card-overlay">
+                        <h3 class="font-heading fw-bold mb-1 fs-5 text-white">Bodys</h3>
+                        <p class="mb-0 text-gold small font-body fw-bold">PRÓXIMAMENTE <i class="bi bi-chevron-right ms-1"></i></p>
                     </div>
                 </div>
             </div>
             <!-- Categoría 3: Accesorios -->
-            <div class="col-md-4 fade-in-up delay-3">
+            <div class="col-6 col-md-3 fade-in-up delay-3">
                 <div class="category-card" onclick="window.location.href='catalogo.html?categoria=accesorios'">
                     <img src="img/productos/cat-accesorios.jpg" 
                          alt="Accesorios MS Boutique"
-                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23121212\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Playfair Display, serif\' font-size=\'32\' font-weight=\'bold\' fill=\'%23C5A880\'>ACCESORIOS</text></svg>';">
+                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23121212\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Playfair Display, serif\' font-size=\'28\' font-weight=\'bold\' fill=\'%23C5A880\'>ACCESORIOS</text></svg>';">
                     <div class="category-card-overlay">
-                        <h3 class="font-heading fw-bold mb-1 fs-2">Accesorios</h3>
-                        <p class="mb-0 text-white-50 small font-body">Cinturones dorados, seda & batas couture <i class="bi bi-chevron-right ms-1"></i></p>
+                        <h3 class="font-heading fw-bold mb-1 fs-5 text-white">Accesorios</h3>
+                        <p class="mb-0 small font-body text-gold-light">Rodio & Van Cleef <i class="bi bi-chevron-right ms-1"></i></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Categoría 4: Productos Purpure -->
+            <div class="col-6 col-md-3 fade-in-up delay-4">
+                <div class="category-card" onclick="window.location.href='catalogo.html?categoria=splash'">
+                    <img src="img/productos/cat-splash.jpg" 
+                         alt="Productos Purpure MS Boutique"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23121212\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Playfair Display, serif\' font-size=\'26\' font-weight=\'bold\' fill=\'%23C5A880\'>PURPURE</text></svg>';">
+                    <div class="category-card-overlay">
+                        <h3 class="font-heading fw-bold mb-1 fs-5 text-white">Productos Purpure</h3>
+                        <p class="mb-0 small font-body text-gold-light">Fragancias & Brillo <i class="bi bi-chevron-right ms-1"></i></p>
                     </div>
                 </div>
             </div>

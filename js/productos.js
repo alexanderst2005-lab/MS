@@ -1,331 +1,318 @@
 /**
- * Base de datos centralizada de productos MS Boutique.
- * 
- * CATÁLOGO COMPLETO:
- * - 6 Bodys (Tallas: S, M, L)
- * - 10 Pijamas (Tallas: S, M, L)
- * - 6 Accesorios (Sin talla, solo cantidad)
+ * Base de datos centralizada de productos MS Boutique / MS by Marcela Segura.
  */
 
 const productos = [
     // ==========================================
-    // --- CATEGORÍA: BODYS (6 Productos - Tallas: S, M, L) ---
+    // --- CATEGORÍA: PIJAMAS (10 Productos - $35.000 COP) ---
     // ==========================================
     {
         id: 1,
-        nombre: "Body Encaje Elegance Nuit",
-        precio: 85000,
-        categoria: "bodys",
+        nombre: "Pijama Piel Durazno 1",
+        precio: 35000,
+        categoria: "pijamas",
         tallas: ["S", "M", "L"],
-        color: "Negro Azabache",
-        material: "Encaje Francés & Seda Elástica",
-        descripcion: "Diseño sofisticado con escote pronunciado en V y detalles de encaje de alta costura.",
-        imagenes: ["img/productos/body-1.jpg"],
-        destacado: true,
-        nuevo: true,
-        masVendido: true
+        descripcion: "Suave, cómoda y perfecta para un descanso con estilo.",
+        imagenes: ["img/productos/pijama-1.jpg"],
+        destacado: true
     },
     {
         id: 2,
-        nombre: "Body Minimalist Silk Nude",
-        precio: 78000,
-        categoria: "bodys",
+        nombre: "Pijama Piel Durazno 2",
+        precio: 35000,
+        categoria: "pijamas",
         tallas: ["S", "M", "L"],
-        color: "Nude Marfil",
-        material: "Microfibra de Alta Densidad & Satén",
-        descripcion: "Corte limpio efecto segunda piel, perfecto para combinar con blazers o pantalones de tiro alto.",
-        imagenes: ["img/productos/body-2.jpg"],
-        destacado: true,
-        nuevo: false,
-        masVendido: true
+        descripcion: "Suave, cómoda y perfecta para un descanso con estilo.",
+        imagenes: ["img/productos/pijama-2.jpg"],
+        destacado: true
     },
     {
         id: 3,
-        nombre: "Body Manga Larga Velvet Touch",
-        precio: 92000,
-        categoria: "bodys",
+        nombre: "Pijama Piel Durazno 3",
+        precio: 35000,
+        categoria: "pijamas",
         tallas: ["S", "M", "L"],
-        color: "Vino Tinto / Burdeos",
-        material: "Terciopelo Elástico Premium",
-        descripcion: "Elegante body de terciopelo con espalda descubierta y broches invisibles de alta durabilidad.",
-        imagenes: ["img/productos/body-3.jpg"],
-        destacado: false,
-        nuevo: true,
-        masVendido: false
+        descripcion: "Suave, cómoda y perfecta para un descanso con estilo.",
+        imagenes: ["img/productos/pijama-3.jpg"],
+        destacado: false
     },
     {
         id: 4,
-        nombre: "Body Asimétrico Golden Hour",
-        precio: 89000,
-        categoria: "bodys",
+        nombre: "Pijama Piel Durazno 4",
+        precio: 35000,
+        categoria: "pijamas",
         tallas: ["S", "M", "L"],
-        color: "Dorado Champagne",
-        material: "Seda Satén y Licra de Ajuste Perfecto",
-        descripcion: "Diseño vanguardista de un solo hombro con pliegues estructurados y acabado satinado.",
-        imagenes: ["img/productos/body-4.jpg"],
-        destacado: true,
-        nuevo: false,
-        masVendido: true
+        descripcion: "Suave, cómoda y perfecta para un descanso con estilo.",
+        imagenes: ["img/productos/pijama-4.jpg"],
+        destacado: true
     },
     {
         id: 5,
-        nombre: "Body Corsetería Royal Mesh",
-        precio: 95000,
-        categoria: "bodys",
+        nombre: "Pijama Piel Durazno 5",
+        precio: 35000,
+        categoria: "pijamas",
         tallas: ["S", "M", "L"],
-        color: "Negro & Beige",
-        material: "Tul Transparente & Varillas Flexibles",
-        descripcion: "Estructura corset refinada con copas amoldadas y transparencias estratégicas.",
-        imagenes: ["img/productos/body-5.jpg"],
-        destacado: false,
-        nuevo: true,
-        masVendido: false
+        descripcion: "Suave, cómoda y perfecta para un descanso con estilo.",
+        imagenes: ["img/productos/pijama-5.jpg"],
+        destacado: false
     },
     {
         id: 6,
-        nombre: "Body Halter Satin Glam",
-        precio: 82000,
-        categoria: "bodys",
-        tallas: ["S", "M", "L"],
-        color: "Blanco Perla",
-        material: "Satén Soft de Seda Sintética",
-        descripcion: "Cuello halter cruzado con caída fluida en el pecho y espalda totalmente libre.",
-        imagenes: ["img/productos/body-6.jpg"],
-        destacado: false,
-        nuevo: false,
-        masVendido: true
-    },
-
-    // ==========================================
-    // --- CATEGORÍA: PIJAMAS (10 Productos - Tallas: S, M, L) ---
-    // ==========================================
-    {
-        id: 7,
-        nombre: "Pijama Satén Luxe 2 Piezas",
-        precio: 135000,
+        nombre: "Pijama Piel Durazno 6",
+        precio: 35000,
         categoria: "pijamas",
         tallas: ["S", "M", "L"],
-        color: "Rosa Champagne",
-        material: "Satén de Seda de Alta Gama",
-        descripcion: "Conjunto exclusivo de camisa abotonada y pantalón fluido con ribetes en contraste.",
-        imagenes: ["img/productos/pijama-1.jpg"],
-        destacado: true,
-        nuevo: true,
-        masVendido: true
+        descripcion: "Suave, cómoda y perfecta para un descanso con estilo.",
+        imagenes: ["img/productos/pijama-6.jpg"],
+        destacado: false
+    },
+    {
+        id: 7,
+        nombre: "Pijama Piel Durazno 7",
+        precio: 35000,
+        categoria: "pijamas",
+        tallas: ["S", "M", "L"],
+        descripcion: "Suave, cómoda y perfecta para un descanso con estilo.",
+        imagenes: ["img/productos/pijama-7.jpg"],
+        destacado: false
     },
     {
         id: 8,
-        nombre: "Kimono Satén & Encaje Royale",
-        precio: 145000,
+        nombre: "Pijama Piel Durazno 8",
+        precio: 35000,
         categoria: "pijamas",
         tallas: ["S", "M", "L"],
-        color: "Negro Satinado",
-        material: "Seda Satén & Encaje en Mangas",
-        descripcion: "Bata estilo kimono con cinturón de satén y remates de encaje refinado en las empuñaduras.",
-        imagenes: ["img/productos/pijama-2.jpg"],
-        destacado: true,
-        nuevo: false,
-        masVendido: false
+        descripcion: "Suave, cómoda y perfecta para un descanso con estilo.",
+        imagenes: ["img/productos/pijama-8.jpg"],
+        destacado: false
     },
     {
         id: 9,
-        nombre: "Pijama Shorts & Top Cami Velvet",
-        precio: 110000,
+        nombre: "Pijama Piel Durazno 9",
+        precio: 35000,
         categoria: "pijamas",
         tallas: ["S", "M", "L"],
-        color: "Verde Esmeralda",
-        material: "Terciopelo Soft & Tirantes Ajustables",
-        descripcion: "Conjunto corto ultra suave con delicados detalles de blonda en escote y dobladillo.",
-        imagenes: ["img/productos/pijama-3.jpg"],
-        destacado: false,
-        nuevo: true,
-        masVendido: false
-    },
-    {
-        id: 10,
-        nombre: "Pijama Palazzo Silk Dreams",
-        precio: 128000,
-        categoria: "pijamas",
-        tallas: ["S", "M", "L"],
-        color: "Gris Perla",
-        material: "Satén Soft Transpirable",
-        descripcion: "Pantalón holgado estilo palazzo y blusa de tirantes con escote fluido para un descanso idílico.",
-        imagenes: ["img/productos/pijama-4.jpg"],
-        destacado: false,
-        nuevo: false,
-        masVendido: true
-    },
-    {
-        id: 11,
-        nombre: "Pijama Camisón Night Goddess",
-        precio: 98000,
-        categoria: "pijamas",
-        tallas: ["S", "M", "L"],
-        color: "Azul Noche Satinado",
-        material: "Satén Sedoso & Escote en Espalda",
-        descripcion: "Camisón largo de caída sensual, tirantes cruzados y hendidura lateral elegante.",
-        imagenes: ["img/productos/pijama-5.jpg"],
-        destacado: true,
-        nuevo: true,
-        masVendido: false
-    },
-    {
-        id: 12,
-        nombre: "Pijama Shorty Silk Touch Gold",
-        precio: 105000,
-        categoria: "pijamas",
-        tallas: ["S", "M", "L"],
-        color: "Champagne / Dorado",
-        material: "Satén Ultra Suave",
-        descripcion: "Dúo fresco de short elástico y top estilo brassier en fina seda satinada.",
-        imagenes: ["img/productos/pijama-6.jpg"],
-        destacado: false,
-        nuevo: false,
-        masVendido: true
-    },
-    {
-        id: 13,
-        nombre: "Pijama Pantalón & Manga Larga Silk Satin",
-        precio: 140000,
-        categoria: "pijamas",
-        tallas: ["S", "M", "L"],
-        color: "Blanco Marfil",
-        material: "100% Satén Pima Premium",
-        descripcion: "Set completo de manga larga y pantalón recto. Estilo clásico de máxima distinción.",
-        imagenes: ["img/productos/pijama-7.jpg"],
-        destacado: true,
-        nuevo: false,
-        masVendido: true
-    },
-    {
-        id: 14,
-        nombre: "Bata Kimono Corto Rose Gold",
-        precio: 120000,
-        categoria: "pijamas",
-        tallas: ["S", "M", "L"],
-        color: "Rosa Nude Satinado",
-        material: "Seda Satén de Alta Densidad",
-        descripcion: "Kimono corto con mangas acampanadas y lazo de ajuste al tono.",
-        imagenes: ["img/productos/pijama-8.jpg"],
-        destacado: false,
-        nuevo: true,
-        masVendido: false
-    },
-    {
-        id: 15,
-        nombre: "Pijama Bralette & Short Lace Trim",
-        precio: 115000,
-        categoria: "pijamas",
-        tallas: ["S", "M", "L"],
-        color: "Vino Borgoña",
-        material: "Satén & Encaje de Pestaña",
-        descripcion: "Diseño romántico de bralette sin varilla con shorts de pretina elástica en encaje.",
+        descripcion: "Suave, cómoda y perfecta para un descanso con estilo.",
         imagenes: ["img/productos/pijama-9.jpg"],
-        destacado: false,
-        nuevo: false,
-        masVendido: false
-    },
-    {
-        id: 16,
-        nombre: "Pijama Lounge Satin Set 3 Piezas",
-        precio: 165000,
-        categoria: "pijamas",
-        tallas: ["S", "M", "L"],
-        color: "Negro Cobre",
-        material: "Satén Premium & Kimono Incluido",
-        descripcion: "Trío de lujo: Incluye top de tirantes, pantalón fluido y bata kimono haciendo juego.",
-        imagenes: ["img/productos/pijama-10.jpg"],
-        destacado: true,
-        nuevo: true,
-        masVendido: true
+        destacado: false
     },
 
     // ==========================================
-    // --- CATEGORÍA: ACCESORIOS (6 Productos - Sin Talla) ---
+    // --- CATEGORÍA: ACCESORIOS (16 Productos) ---
     // ==========================================
     {
-        id: 17,
-        nombre: "Cinturón Cadena Gold Link",
-        precio: 65000,
+        id: 11,
+        nombre: "Collar Cruz Verde en Rodio",
+        precio: 35000,
         categoria: "accesorios",
         tallas: [],
-        color: "Dorado Baño de Oro 18k",
-        material: "Aleación Fina Antialérgica",
-        descripcion: "Cinturón de eslabones dorados ideal para estilizar la figura con bodys y vestidos.",
-        imagenes: ["img/productos/accesorio-1.jpg"],
-        destacado: true,
-        nuevo: true,
-        masVendido: true
+        descripcion: "Elegante collar en rodio con cruz de circones verdes. Ideal para cualquier ocasión.",
+        imagenes: ["img/productos/collar-cruz-verde.jpg"],
+        destacado: true
+    },
+    {
+        id: 12,
+        nombre: "Collar Virgen de Guadalupe en Rodio",
+        precio: 35000,
+        categoria: "accesorios",
+        tallas: [],
+        descripcion: "Collar en rodio con dije de la Virgen de Guadalupe, símbolo de fe y protección.",
+        imagenes: ["img/productos/collar-virgen-guadalupe.jpg"],
+        destacado: true
+    },
+    {
+        id: 13,
+        nombre: "Collar Cruz Negra en Rodio",
+        precio: 35000,
+        categoria: "accesorios",
+        tallas: [],
+        descripcion: "Collar en rodio con un diseño moderno y sofisticado.",
+        imagenes: ["img/productos/collar-cruz-negra.jpg"],
+        destacado: false
+    },
+    {
+        id: 14,
+        nombre: "Collar Cruz Clásica en Rodio",
+        precio: 35000,
+        categoria: "accesorios",
+        tallas: [],
+        descripcion: "Diseño clásico y elegante para complementar cualquier look.",
+        imagenes: ["img/productos/collar-cruz-clasica.jpg"],
+        destacado: false
+    },
+    {
+        id: 15,
+        nombre: "Collar Lazo San Francisco (Modelo 1)",
+        precio: 30000,
+        categoria: "accesorios",
+        tallas: [],
+        descripcion: "Diseño delicado y femenino con acabado elegante.",
+        imagenes: ["img/productos/collar-lazo-1.jpg"],
+        destacado: true
+    },
+    {
+        id: 16,
+        nombre: "Collar Lazo San Francisco (Modelo 2)",
+        precio: 30000,
+        categoria: "accesorios",
+        tallas: [],
+        descripcion: "Collar moderno y versátil para cualquier ocasión.",
+        imagenes: ["img/productos/collar-lazo-1.jpg"],
+        destacado: false
+    },
+    {
+        id: 17,
+        nombre: "Set Van Cleef Brillante Negro",
+        precio: 28000,
+        categoria: "accesorios",
+        tallas: [],
+        descripcion: "Juego de collar y aretes con un diseño elegante y brillante.",
+        imagenes: ["img/productos/van-cleef-brillante-negro.jpg"],
+        destacado: true
     },
     {
         id: 18,
-        nombre: "Antifaz para Dormir Seda 100% Pura",
-        precio: 45000,
+        nombre: "Set Van Cleef Circones Blanco",
+        precio: 28000,
         categoria: "accesorios",
         tallas: [],
-        color: "Champagne / Perla",
-        material: "Seda Mulberry Hipoalergénica",
-        descripcion: "Protege el contorno de ojos y cabello mientras duermes con nuestra seda ultrasuave.",
-        imagenes: ["img/productos/accesorio-2.jpg"],
-        destacado: true,
-        nuevo: false,
-        masVendido: true
+        descripcion: "Juego de collar y aretes con delicados circones que resaltan su brillo.",
+        imagenes: ["img/productos/van-cleef-circones-blanco.jpg"],
+        destacado: false
     },
     {
         id: 19,
-        nombre: "Scrunchie Set x3 Seda Mulberry",
-        precio: 38000,
+        nombre: "Set Van Cleef Circones Plateado",
+        precio: 28000,
         categoria: "accesorios",
         tallas: [],
-        color: "Nude, Dorado & Negro",
-        material: "100% Seda Natural",
-        descripcion: "Coleteros de seda que evitan el quiebre y el frizz del cabello durante el descanso o uso diario.",
-        imagenes: ["img/productos/accesorio-3.jpg"],
-        destacado: false,
-        nuevo: true,
-        masVendido: false
+        descripcion: "Collar y aretes en tono plateado con un acabado elegante.",
+        imagenes: ["img/productos/van-cleef-circones-plateado.jpg"],
+        destacado: false
     },
     {
         id: 20,
-        nombre: "Bata Relajante Plush Couture",
-        precio: 155000,
+        nombre: "Camándula en Rodio",
+        precio: 30000,
         categoria: "accesorios",
         tallas: [],
-        color: "Marfil / Nude",
-        material: "Microfibra Ultra Fluffy",
-        descripcion: "Bata envolvente de textura afelpada para momentos de relax y spa en casa.",
-        imagenes: ["img/productos/accesorio-4.jpg"],
-        destacado: false,
-        nuevo: false,
-        masVendido: false
+        descripcion: "Camándula de excelente calidad con acabado en rodio.",
+        imagenes: ["img/productos/camandula-rodio.jpg"],
+        destacado: false
     },
     {
         id: 21,
-        nombre: "Cinturón Corset de Cuero Eco Gold",
-        precio: 72000,
+        nombre: "Camándula Especial en Rodio",
+        precio: 35000,
         categoria: "accesorios",
         tallas: [],
-        color: "Negro & Hebilla Dorada",
-        material: "Cuero Ecológico de Alta Resistencia",
-        descripcion: "Cinturón de talle ancho tipo corset para acentuar la cintura con elegancia.",
-        imagenes: ["img/productos/accesorio-5.jpg"],
-        destacado: true,
-        nuevo: false,
-        masVendido: true
+        descripcion: "Diseño exclusivo con acabado premium.",
+        imagenes: ["img/productos/camandula-especial.jpg"],
+        destacado: true
     },
     {
         id: 22,
-        nombre: "Set Joyero Viajero de Terciopelo MS",
-        precio: 55000,
+        nombre: "Set Elegance 1",
+        precio: 16000,
         categoria: "accesorios",
         tallas: [],
-        color: "Rosa Nude & Dorado",
-        material: "Terciopelo Suave & Cierre Metálico",
-        descripcion: "Estuche compacto acolchado para organizar y proteger tus joyas y accesorios en viajes.",
-        imagenes: ["img/productos/accesorio-6.jpg"],
-        destacado: false,
-        nuevo: true,
-        masVendido: false
+        descripcion: "Juego de collar y aretes con diseño delicado y moderno.",
+        imagenes: ["img/productos/set-elegance-1.jpg"],
+        destacado: false
+    },
+    {
+        id: 23,
+        nombre: "Set Elegance 2",
+        precio: 16000,
+        categoria: "accesorios",
+        tallas: [],
+        descripcion: "Elegancia y estilo para cualquier ocasión.",
+        imagenes: ["img/productos/set-elegance-2.jpg"],
+        destacado: false
+    },
+    {
+        id: 24,
+        nombre: "Set Elegance 3",
+        precio: 16000,
+        categoria: "accesorios",
+        tallas: [],
+        descripcion: "Juego de collar y aretes con acabado sofisticado.",
+        imagenes: ["img/productos/set-elegance-3.jpg"],
+        destacado: false
+    },
+    {
+        id: 25,
+        nombre: "Pulsera Tejida San Benito",
+        precio: 15000,
+        categoria: "accesorios",
+        tallas: [],
+        descripcion: "Pulsera tejida con dije de San Benito, símbolo de protección.",
+        imagenes: ["img/productos/pulsera-san-benito.jpg"],
+        destacado: false
+    },
+    {
+        id: 26,
+        nombre: "Pulsera Tejida Van Cleef",
+        precio: 15000,
+        categoria: "accesorios",
+        tallas: [],
+        descripcion: "Pulsera tejida con un diseño elegante y moderno.",
+        imagenes: ["img/productos/pulsera-van-cleef.jpg"],
+        destacado: true
+    },
+
+    // ==========================================
+    // --- CATEGORÍA: PRODUCTOS PURPURE (5 Productos) ---
+    // ==========================================
+    {
+        id: 27,
+        nombre: "Splash Corporal 100 ml",
+        precio: 18000,
+        categoria: "splash",
+        tallas: [],
+        descripcion: "Fragancia fresca y duradera para uso diario.",
+        imagenes: ["img/productos/splash-100ml.jpg"],
+        destacado: true
+    },
+    {
+        id: 28,
+        nombre: "Splash Corporal 200 ml",
+        precio: 25000,
+        categoria: "splash",
+        tallas: [],
+        descripcion: "Aroma delicioso con excelente duración.",
+        imagenes: ["img/productos/splash-200ml.jpg"],
+        destacado: true
+    },
+    {
+        id: 29,
+        nombre: "Splash Corporal 250 ml",
+        precio: 28000,
+        categoria: "splash",
+        tallas: [],
+        descripcion: "Fragancia intensa y sofisticada.",
+        imagenes: ["img/productos/splash-250ml.jpg"],
+        destacado: false
+    },
+    {
+        id: 30,
+        nombre: "Brilli Brilli 160 ml",
+        precio: 18000,
+        categoria: "splash",
+        tallas: [],
+        descripcion: "Brillo corporal con efecto luminoso y un delicioso aroma.",
+        imagenes: ["img/productos/brilli-brilli-160ml.jpg"],
+        destacado: true
+    },
+    {
+        id: 31,
+        nombre: "Mantequilla Corporal",
+        precio: 25000,
+        categoria: "splash",
+        tallas: [],
+        descripcion: "Hidrata profundamente la piel y la deja suave y perfumada.",
+        imagenes: ["img/productos/mantequilla-corporal.jpg"],
+        destacado: true
     }
 ];
 
