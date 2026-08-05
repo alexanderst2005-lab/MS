@@ -130,21 +130,37 @@
                         </div>
                     </div>
 
-                    <!-- Ordenar por Precio -->
+                    <!-- Ordenar por Precio Sidebar -->
                     <div class="mb-2">
-                        <label class="form-label small fw-bold text-muted text-uppercase letter-spacing-1">Ordenar
-                            por:</label>
-                        <select class="form-select form-select-sm rounded-pill" id="filtro-orden-select">
-                            <option value="defecto">Relevancia</option>
-                            <option value="precio-asc">Precio: Menor a Mayor</option>
-                            <option value="precio-desc">Precio: Mayor a Menor</option>
+                        <label class="form-label small fw-bold text-muted text-uppercase letter-spacing-1">Ordenar por:</label>
+                        <select class="form-select form-select-sm rounded-pill filtro-orden-select-input border-warning" id="filtro-orden-select-side">
+                            <option value="defecto">✨ Relevancia</option>
+                            <option value="precio-asc">💰 Precio: Menor a Mayor</option>
+                            <option value="precio-desc">💎 Precio: Mayor a Menor</option>
                         </select>
                     </div>
                 </div>
             </div>
 
-            <!-- GRILLA DE PRODUCTOS -->
+            <!-- GRILLA DE PRODUCTOS Y BARRA SUPERIOR DE ORDENACIÓN -->
             <div class="col-lg-9">
+                <!-- BARRA DE ORDENACIÓN DESTACADA PARA MÓVIL Y DESKTOP -->
+                <div class="d-flex justify-content-between align-items-center mb-4 p-3 bg-white rounded-4 shadow-sm border border-gold-subtle flex-wrap gap-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-sort-numeric-down text-warning fs-5"></i>
+                        <span class="fw-bold small text-uppercase font-heading letter-spacing-1">Ordenar Productos:</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 flex-grow-1 flex-sm-grow-0 ms-auto">
+                        <select class="form-select form-select-sm rounded-pill border-warning bg-white fw-semibold filtro-orden-select-input shadow-xs" 
+                                id="filtro-orden-select" 
+                                style="min-width: 220px; border-color: rgba(197, 168, 128, 0.6) !important; padding: 0.45rem 1rem;">
+                            <option value="defecto">✨ Relevancia / Destacados</option>
+                            <option value="precio-asc">💰 Precio: Menor a Mayor</option>
+                            <option value="precio-desc">💎 Precio: Mayor a Menor</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="row g-3" id="catalogo-grid-container">
                     <!-- Renderizado dinámico -->
                 </div>
@@ -330,13 +346,14 @@
                 });
             });
 
-            const selectOrden = document.getElementById('filtro-orden-select');
-            if (selectOrden) {
-                selectOrden.addEventListener('change', (e) => {
+            const selectsOrden = document.querySelectorAll('.filtro-orden-select-input');
+            selectsOrden.forEach(select => {
+                select.addEventListener('change', (e) => {
                     opcionesFiltros.orden = e.target.value;
+                    selectsOrden.forEach(s => s.value = e.target.value);
                     actualizarGridConFiltros();
                 });
-            }
+            });
 
             // Soporte para botones Atrás / Adelante del navegador
             window.addEventListener('popstate', () => {
