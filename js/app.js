@@ -53,6 +53,10 @@ const cerrarVisorImagen = () => {
 
 const crearTarjetaProductoHTML = (producto) => {
     const tieneTallas = producto.tallas && producto.tallas.length > 0;
+const crearTarjetaProductoHTML = (producto, index = 0) => {
+    if (!producto) return '';
+
+    const tieneTallas = producto.tallas && producto.tallas.length > 0;
 
     let controlesTallaHTML = '';
     if (tieneTallas) {
@@ -65,7 +69,7 @@ const crearTarjetaProductoHTML = (producto) => {
     } else {
         controlesTallaHTML = `
             <select class="form-select size-select-box text-muted py-1 px-2" id="talla-select-${producto.id}" disabled style="opacity: 0.7;">
-                <option value="">Única</option>
+                <option value="Única">Única</option>
             </select>
         `;
     }
@@ -95,6 +99,8 @@ const crearTarjetaProductoHTML = (producto) => {
         categoriaEtiqueta = 'Bodys';
     }
 
+    const loadingAttr = index < 8 ? 'eager' : 'lazy';
+
     return `
         <div class="col-6 col-md-4 col-xl-3 mb-3 fade-in-up">
             <div class="product-card-premium">
@@ -102,7 +108,7 @@ const crearTarjetaProductoHTML = (producto) => {
                     <img src="${rutaImagen}" 
                          alt="${producto.nombre}" 
                          onerror="this.onerror=null; this.src=window.PLACEHOLDER_SVG;" 
-                         loading="eager">
+                         loading="${loadingAttr}">
                     <div class="img-zoom-badge">
                         <i class="bi bi-arrows-angle-expand"></i>
                     </div>
@@ -188,10 +194,22 @@ const renderizarGrillaProductos = (contenedorId, opcionesFiltro = {}) => {
         return;
     }
 
-    contenedor.innerHTML = lista.map(p => crearTarjetaProductoHTML(p)).join('');
+    contenedor.innerHTML = lista.map((p, i) => crearTarjetaProductoHTML(p, i)).join('');
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Preload all product images in background to make them instant when scrolling
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            productos.forEach(p => {
+                if (p.imagenes && p.imagenes[0]) {
+                    const img = new Image();
+                    img.src = p.imagenes[0];
+                }
+            });
+        }, 1000); // Delay preloading slightly to not interfere with initial render
+    });
+
     renderizarGrillaProductos('productos-destacados-container', { destacado: true });
     renderizarGrillaProductos('productos-nuevos-container', { nuevo: true });
 
