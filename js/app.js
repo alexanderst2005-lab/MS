@@ -102,7 +102,7 @@ const crearTarjetaProductoHTML = (producto) => {
                     <img src="${rutaImagen}" 
                          alt="${producto.nombre}" 
                          onerror="this.onerror=null; this.src=window.PLACEHOLDER_SVG;" 
-                         loading="lazy">
+                         loading="eager">
                     <div class="img-zoom-badge">
                         <i class="bi bi-arrows-angle-expand"></i>
                     </div>
