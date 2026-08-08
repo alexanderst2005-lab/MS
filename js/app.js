@@ -51,8 +51,6 @@ const cerrarVisorImagen = () => {
     }
 };
 
-const crearTarjetaProductoHTML = (producto) => {
-    const tieneTallas = producto.tallas && producto.tallas.length > 0;
 const crearTarjetaProductoHTML = (producto, index = 0) => {
     if (!producto) return '';
 
