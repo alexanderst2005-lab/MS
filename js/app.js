@@ -97,7 +97,7 @@ const crearTarjetaProductoHTML = (producto, index = 0) => {
         categoriaEtiqueta = 'Bodys';
     }
 
-    const loadingAttr = index < 8 ? 'eager' : 'lazy';
+    const loadingAttr = 'eager';
 
     return `
         <div class="col-6 col-md-4 col-xl-3 mb-3 fade-in-up">
